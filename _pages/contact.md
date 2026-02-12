@@ -10,28 +10,21 @@ nav_order: 7
 ## Contact Information
 
 **AI & Business Analytics Lab (AIBA Lab)**  
-KAIST Graduate School of Business
+KAIST College of Business (School of Management Engineering)
 
 📍 **Address**  
+Supex S286  
 85 Hoegi-ro, Dongdaemun-gu  
-Seoul, Korea 02455
+Seoul 02455, South Korea
 
 📧 **Email**  
 [dhs@kaist.ac.kr](mailto:dhs@kaist.ac.kr)
 
+📞 **Phone**  
++82-2-958-3286
+
 🌐 **Website**  
 [https://aiba-kaist.github.io](https://aiba-kaist.github.io)
-
----
-
-## Directions
-
-**By Subway**  
-- Line 1: Hoegi Station (Exit 1), 10 min walk
-- Line 6: Korea University Station (Exit 3), 15 min walk
-
-**By Bus**  
-- Multiple bus routes stop near KAIST Seoul Campus
 
 ---
 
@@ -39,10 +32,4 @@ Seoul, Korea 02455
 
 We are always looking for talented and motivated students!
 
-If you are interested in:
-- Economics of AI/IT
-- AI/ML Applications in Business
-- Digital Platforms and Social Media
-
-Please send your CV and a brief statement of interest to [dhs@kaist.ac.kr](mailto:dhs@kaist.ac.kr).
-
+If you are interested in Economics of AI/IT, AI/ML Applications in Business, or Digital Platforms and Social Media, please send your CV and a brief statement of interest to [dhs@kaist.ac.kr](mailto:dhs@kaist.ac.kr).

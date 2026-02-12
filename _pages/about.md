@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: AI & Business Analytics Lab @ <a href='https://gsb.kaist.ac.kr'>KAIST Graduate School of Business</a>
+subtitle: AI & Business Analytics Lab @ <a href='https://gsb.kaist.ac.kr'>KAIST College of Business</a>
 
 profile:
   align: right
@@ -10,6 +10,7 @@ profile:
   image_circular: false
   more_info: >
     <p>KAIST College of Business</p>
+    <p>Supex S286</p>
     <p>85 Hoegi-ro, Dongdaemun-gu</p>
     <p>Seoul, Korea 02455</p>
 
@@ -25,9 +26,9 @@ latest_posts:
   enabled: false
 ---
 
-Welcome to the **AI & Business Analytics (AIBA) Lab** at KAIST Graduate School of Business, led by Professor **Donghyuk Shin**.
+Welcome to the **AI & Business Analytics (AIBA) Lab** at KAIST College of Business (School of Management Engineering), led by **Associate Professor Donghyuk Shin**.
 
-We are committed to uncovering data-centric solutions to complex, real-world challenges by harnessing the power of artificial intelligence. Our research spans multiple domains including:
+We combine AI and business analytics to empirically analyze the economic and social value of artificial intelligence. Our research lies at the intersection of **artificial intelligence** and **information systems**. Topics of interest include artificial intelligence, digital platforms, educational technology, and their business and societal impacts. We use ML, econometric analysis, and randomized field experiments.
 
 ## Research Areas
 
