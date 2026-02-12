@@ -2,14 +2,28 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Course materials, schedules, and resources for classes taught.
+description: Courses taught by AIBA Lab
 nav: true
-nav_order: 6
-calendar: true
+nav_order: 5
 ---
 
-This page displays a collection of courses with detailed schedules, materials, and resources. You can organize your courses by years, terms, or topics.
+## Current Courses
 
-{% include calendar.liquid calendar_id='test@gmail.com' timezone='Asia/Shanghai' %}
+### KAIST Graduate School of Business
 
-{% include courses.liquid %}
+**MGT 562 - Business Analytics**
+- Graduate level course on data analytics for business decision-making
+- Topics: Machine Learning, Deep Learning, NLP, Causal Inference
+
+**MGT 565 - IT and Strategy**  
+- Graduate level course on strategic implications of IT
+- Topics: Platform Economics, AI/IT Economics, Digital Transformation
+
+---
+
+## Past Courses
+
+- Business Analytics (2023-2024)
+- IT and Strategy (2023-2024)
+- Data Science for Business (2022-2023)
+
