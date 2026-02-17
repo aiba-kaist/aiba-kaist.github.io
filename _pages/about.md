@@ -4,15 +4,7 @@ title: about
 permalink: /
 subtitle: AI & Business Analytics Lab @ <a href='https://gsb.kaist.ac.kr'>KAIST College of Business</a>
 
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false
-  more_info: >
-    <p>KAIST College of Business</p>
-    <p>Supex S286</p>
-    <p>85 Hoegi-ro, Dongdaemun-gu</p>
-    <p>Seoul, Korea 02455</p>
+profile: false
 
 selected_papers: true
 social: false
