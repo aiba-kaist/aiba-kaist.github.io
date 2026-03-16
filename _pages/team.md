@@ -21,7 +21,7 @@ nav_order: 2
 ## Faculty
 
 {% for m in faculty %}
-<div class="row">
+<div class="row mb-4">
   <div class="col-sm-3">
     <img class="img-fluid rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}">
   </div>
@@ -29,22 +29,39 @@ nav_order: 2
     <h4>{{ m.name_en }}</h4>
     <p><strong>{{ m.position }}</strong><br>
     {{ m.affiliation }}<br>
-    <a href="mailto:{{ m.email }}">{{ m.email }}</a>{% if m.website %} · 
-    <a href="{{ m.website }}">Personal Website</a>{% endif %}</p>
-    <p><em>Research Interests:</em> {{ m.research_area }}</p>
+    <a href="mailto:{{ m.email }}">{{ m.email }}</a>{% if m.website %} · <a href="{{ m.website }}">Personal Website</a>{% endif %}</p>
+    
     {% if m.bio %}
+    {% assign bio_paragraphs = m.bio | split: "\n\n" %}
+    {% for para in bio_paragraphs %}
+    <p style="text-align:justify;">{{ para }}</p>
+    {% endfor %}
+    {% endif %}
+    
+    <p><strong>Research Areas:</strong> {{ m.research_area }}</p>
+    
+    {% if m.education %}
+    <p><strong>Education:</strong> {{ m.education }}</p>
+    {% endif %}
+    
+    {% if m.career %}
+    <p><strong>Career:</strong></p>
     <ul>
-      {% assign bio_lines = m.bio | split: "\n" %}
-      {% for line in bio_lines %}
+      {% assign career_lines = m.career | split: "\n" %}
+      {% for line in career_lines %}
       {% if line != "" %}<li>{{ line }}</li>{% endif %}
       {% endfor %}
     </ul>
     {% endif %}
+    
+    {% if m.advisory %}
+    <p><strong>Industry Advisory:</strong> {{ m.advisory }}</p>
+    {% endif %}
   </div>
 </div>
+{% endfor %}
 
 ---
-{% endfor %}
 {% endif %}
 
 {% if phd.size > 0 %}
@@ -111,11 +128,11 @@ nav_order: 2
 
 {% else %}
 
-<!-- Fallback: 기존 하드코딩 데이터 -->
+<!-- Fallback -->
 
 ## Faculty
 
-<div class="row">
+<div class="row mb-4">
   <div class="col-sm-3">
     <img class="img-fluid rounded" src="/assets/img/members/shin.jpg" alt="Donghyuk Shin">
   </div>
@@ -123,14 +140,24 @@ nav_order: 2
     <h4>Donghyuk Shin</h4>
     <p><strong>Associate Professor</strong><br>
     KAIST College of Business (School of Management Engineering)<br>
-    <a href="mailto:dhs@kaist.ac.kr">dhs@kaist.ac.kr</a> · 
-    <a href="https://dshin32.github.io">Personal Website</a></p>
-    <p><em>Research Interests:</em> Economics of AI/IT, AI/ML Applications, Digital Platforms</p>
+    <a href="mailto:dhs@kaist.ac.kr">dhs@kaist.ac.kr</a> · <a href="https://dshin32.github.io">Personal Website</a></p>
+    
+    <p style="text-align:justify;">I am an Associate Professor in the College of Business (School of Management Engineering) at the Korea Advanced Institute of Science and Technology (KAIST). My research interests lie at the intersection of machine learning (ML) and information systems. Topics of interest include but are not limited to artificial intelligence, digital platforms, educational technology, and their business and societal impacts. In my research, I use ML, econometric analysis, and randomized field experiments.</p>
+    
+    <p style="text-align:justify;">Prior to joining KAIST, I was an Assistant Professor of Information Systems at the W. P. Carey School of Business, Arizona State University (2019–2024). Before that, I served as a Machine Learning Scientist at Amazon Web Services (2016–2019), where I developed and implemented ML systems to understand and serve customer needs on the world's largest Cloud platform. I obtained my Ph.D. in Computer Science from the University of Texas at Austin under the supervision of Prof. Inderjit S. Dhillon. During my graduate studies, I had also closely worked with Prof. Andrew B. Whinston and spent time at Yahoo! Research (2014) and Amazon (2013).</p>
+    
+    <p><strong>Research Areas:</strong> Artificial Intelligence, Economics of AI and IT, AI/ML Applications, Digital Platforms</p>
+    
+    <p><strong>Education:</strong> Ph.D. in Computer Science, The University of Texas at Austin</p>
+    
+    <p><strong>Career:</strong></p>
     <ul>
-      <li>Ph.D. in Computer Science, UT Austin</li>
-      <li>Assistant Professor, Arizona State University</li>
-      <li>ML Scientist, Amazon</li>
+      <li>Associate Professor, KAIST (2024~Present)</li>
+      <li>Assistant Professor, Arizona State University (2019~2024)</li>
+      <li>Machine Learning Scientist, Amazon Web Services (2016~2019)</li>
     </ul>
+    
+    <p><strong>Industry Advisory:</strong> POSCO Holdings Inc. (N.EX.T Hub, AI Lab), AI Advisory Council, 2024</p>
   </div>
 </div>
 

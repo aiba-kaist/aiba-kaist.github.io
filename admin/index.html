@@ -6,173 +6,235 @@
   <meta name="robots" content="noindex">
   <title>AIBA Lab Admin</title>
   <style>
-    * { box-sizing: border-box; }
-    body { font-family: -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
-    h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
-    h2 { margin-top: 30px; color: #1a1a1a; display: flex; justify-content: space-between; align-items: center; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f9fa; color: #212529; }
     
-    .login { max-width: 320px; margin: 100px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    .login h2 { margin-top: 0; border: none; }
-    .login input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
-    .login button { width: 100%; padding: 12px; background: #333; color: white; border: none; border-radius: 4px; cursor: pointer; }
-    .login small { color: #666; display: block; margin-top: 10px; }
-    .login a { color: #007bff; }
+    .login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .login { width: 100%; max-width: 360px; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .login h1 { font-size: 24px; margin-bottom: 8px; }
+    .login p { color: #6c757d; margin-bottom: 24px; font-size: 14px; }
+    .login input { width: 100%; padding: 12px 16px; border: 1px solid #dee2e6; border-radius: 8px; font-size: 15px; margin-bottom: 12px; }
+    .login input:focus { outline: none; border-color: #228be6; }
+    .login button { width: 100%; padding: 12px; background: #228be6; color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 500; cursor: pointer; }
+    .login button:hover { background: #1c7ed6; }
+    .login .skip { background: #868e96; margin-top: 8px; }
+    .login small { display: block; margin-top: 16px; color: #868e96; font-size: 13px; }
+    .login a { color: #228be6; }
     
-    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-    .header-right { display: flex; gap: 10px; align-items: center; }
-    .header-right button { padding: 8px 16px; border: 1px solid #ccc; background: white; border-radius: 4px; cursor: pointer; }
-    .header-right button:hover { background: #f0f0f0; }
+    .container { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+    header h1 { font-size: 22px; font-weight: 600; }
+    .header-actions { display: flex; gap: 8px; align-items: center; }
+    .header-actions span { font-size: 13px; padding: 6px 12px; background: #d3f9d8; color: #2f9e44; border-radius: 20px; }
+    .header-actions button { padding: 8px 14px; border: 1px solid #dee2e6; background: white; border-radius: 6px; font-size: 13px; cursor: pointer; }
+    .header-actions button:hover { background: #f8f9fa; }
     
-    .tabs { display: flex; gap: 8px; margin: 20px 0; flex-wrap: wrap; }
-    .tabs button { padding: 12px 24px; border: none; background: white; cursor: pointer; border-radius: 8px; font-size: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .tabs button:hover { background: #f0f0f0; }
-    .tabs button.active { background: #333; color: white; }
+    .tabs { display: flex; gap: 4px; background: white; padding: 4px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .tabs button { flex: 1; padding: 10px 16px; border: none; background: transparent; border-radius: 8px; font-size: 14px; cursor: pointer; color: #495057; }
+    .tabs button:hover { background: #f1f3f5; }
+    .tabs button.active { background: #228be6; color: white; }
+    
+    .status { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; display: none; }
+    .status.success { display: block; background: #d3f9d8; color: #2f9e44; }
+    .status.error { display: block; background: #ffe3e3; color: #e03131; }
+    .status.loading { display: block; background: #fff3bf; color: #e67700; }
     
     .section { display: none; }
     .section.active { display: block; }
+    .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; gap: 12px; flex-wrap: wrap; }
+    .section-header h2 { font-size: 18px; font-weight: 600; }
+    .section-actions { display: flex; gap: 8px; align-items: center; }
+    .add-btn { padding: 8px 16px; background: #228be6; color: white; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; }
+    .add-btn:hover { background: #1c7ed6; }
     
-    .item { background: white; border: 1px solid #e0e0e0; padding: 20px; margin-bottom: 12px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-    .item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
-    .item-title { font-weight: 600; font-size: 16px; }
-    .item .delete { background: #dc3545; color: white; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; }
-    .item .delete:hover { background: #c82333; }
+    /* DOI Input */
+    .doi-input { display: flex; gap: 8px; }
+    .doi-input input { padding: 8px 12px; border: 1px solid #dee2e6; border-radius: 6px; font-size: 14px; width: 280px; }
+    .doi-input button { padding: 8px 14px; background: #40c057; color: white; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; }
+    .doi-input button:hover { background: #37b24d; }
     
+    .items { display: flex; flex-direction: column; gap: 8px; }
+    .item { background: white; border: 1px solid #e9ecef; border-radius: 10px; padding: 16px; cursor: grab; transition: box-shadow 0.15s, transform 0.15s; }
+    .item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .item.dragging { opacity: 0.5; transform: scale(1.02); }
+    .item.drag-over { border-color: #228be6; border-style: dashed; }
+    
+    .item-main { display: flex; align-items: center; gap: 12px; }
+    .drag-handle { color: #adb5bd; font-size: 18px; cursor: grab; user-select: none; }
+    .item-photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; background: #e9ecef; flex-shrink: 0; }
+    .item-photo.rect { border-radius: 6px; width: 64px; height: 40px; }
+    .item-info { flex: 1; min-width: 0; }
+    .item-title { font-weight: 500; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .item-sub { font-size: 13px; color: #868e96; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .item-badge { font-size: 11px; padding: 2px 8px; background: #e7f5ff; color: #1971c2; border-radius: 4px; white-space: nowrap; }
+    .item-badge.award { background: #fff3bf; color: #e67700; }
+    .item-badge.featured { background: #d3f9d8; color: #2f9e44; }
+    .item-actions { display: flex; gap: 6px; flex-shrink: 0; }
+    .item-actions button { padding: 6px 12px; border: 1px solid #dee2e6; background: white; border-radius: 6px; font-size: 13px; cursor: pointer; }
+    .item-actions button:hover { background: #f8f9fa; }
+    .item-actions .delete { color: #e03131; border-color: #ffc9c9; }
+    .item-actions .delete:hover { background: #ffe3e3; }
+    
+    .item-edit { display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #e9ecef; }
+    .item.editing .item-edit { display: block; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .form-row { margin-bottom: 12px; }
-    .form-row label { display: block; font-weight: 500; margin-bottom: 5px; font-size: 13px; color: #444; }
-    .form-row input, .form-row select, .form-row textarea { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
-    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { outline: none; border-color: #007bff; }
+    .form-row.full { grid-column: span 2; }
+    .form-row label { display: block; font-size: 13px; font-weight: 500; color: #495057; margin-bottom: 4px; }
+    .form-row input, .form-row select, .form-row textarea { width: 100%; padding: 10px 12px; border: 1px solid #dee2e6; border-radius: 6px; font-size: 14px; }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus { outline: none; border-color: #228be6; }
     .form-row textarea { min-height: 80px; resize: vertical; }
-    
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
-    
-    .add-btn { background: #28a745; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 14px; }
-    .add-btn:hover { background: #218838; }
-    
-    .save-btn { background: #007bff; color: white; border: none; padding: 14px 40px; border-radius: 6px; cursor: pointer; font-size: 16px; margin-top: 20px; }
-    .save-btn:hover { background: #0056b3; }
-    .save-btn:disabled { background: #ccc; cursor: not-allowed; }
-    
-    .status { padding: 12px 16px; margin: 15px 0; border-radius: 6px; display: none; font-size: 14px; }
-    .status.success { display: block; background: #d4edda; color: #155724; }
-    .status.error { display: block; background: #f8d7da; color: #721c24; }
-    .status.loading { display: block; background: #fff3cd; color: #856404; }
+    .form-check { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+    .form-check input { width: auto; }
     
     .photo-upload { display: flex; align-items: center; gap: 12px; }
-    .photo-preview { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid #ddd; }
-    .photo-placeholder { width: 70px; height: 70px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; color: #6c757d; font-size: 28px; }
-    .upload-btn { background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 13px; }
-    .upload-btn:hover { background: #5a6268; }
-    input[type="file"] { display: none; }
-    .photo-filename { font-size: 12px; color: #666; max-width: 150px; overflow: hidden; text-overflow: ellipsis; }
+    .photo-upload img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+    .photo-upload .placeholder { width: 56px; height: 56px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; color: #868e96; font-size: 20px; }
+    .upload-btn { padding: 8px 14px; background: #f1f3f5; border: 1px solid #dee2e6; border-radius: 6px; font-size: 13px; cursor: pointer; }
+    .upload-btn:hover { background: #e9ecef; }
     
-    .empty-state { text-align: center; padding: 40px; color: #999; background: white; border-radius: 8px; margin-bottom: 12px; }
+    .empty { text-align: center; padding: 60px 20px; color: #868e96; }
+    .empty-icon { font-size: 48px; margin-bottom: 12px; }
+    
+    .save-bar { position: fixed; bottom: 0; left: 0; right: 0; padding: 16px 24px; background: white; border-top: 1px solid #e9ecef; display: flex; justify-content: center; }
+    .save-btn { padding: 12px 48px; background: #228be6; color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 500; cursor: pointer; }
+    .save-btn:hover { background: #1c7ed6; }
+    
+    .spacer { height: 80px; }
+    
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-row.full { grid-column: span 1; }
+      .tabs { flex-wrap: wrap; }
+      .tabs button { flex: none; }
+      .doi-input { flex-direction: column; }
+      .doi-input input { width: 100%; }
+    }
   </style>
 </head>
 <body>
 
-<div id="loginScreen" class="login">
-  <h2>🔬 AIBA Lab Admin</h2>
-  <input type="password" id="password" placeholder="비밀번호" onkeypress="if(event.key==='Enter')checkPassword()">
-  <button onclick="checkPassword()">로그인</button>
+<div id="loginScreen" class="login-wrap">
+  <div class="login">
+    <h1>🔬 AIBA Lab</h1>
+    <p>Admin Panel</p>
+    <input type="password" id="password" placeholder="비밀번호" onkeypress="if(event.key==='Enter')checkPassword()">
+    <button onclick="checkPassword()">로그인</button>
+  </div>
 </div>
 
-<div id="tokenScreen" class="login" style="display:none;">
-  <h2>🔑 GitHub Token 설정</h2>
-  <p style="font-size:14px;color:#666;margin-bottom:15px;">사진 업로드 및 자동 저장을 위해 GitHub Token이 필요합니다. (최초 1회)</p>
-  <input type="password" id="tokenInput" placeholder="ghp_xxxxxxxxxxxx">
-  <button onclick="saveTokenAndContinue()">저장하고 계속</button>
-  <small><a href="https://github.com/settings/tokens/new?scopes=repo" target="_blank">여기서 토큰 생성</a> → repo 체크 → 복사 → 붙여넣기</small>
-  <button onclick="skipToken()" style="margin-top:10px;background:#6c757d;">나중에 하기 (수동 저장)</button>
+<div id="tokenScreen" class="login-wrap" style="display:none;">
+  <div class="login">
+    <h1>🔑 GitHub Token</h1>
+    <p>자동 저장을 위해 토큰을 입력하세요 (최초 1회)</p>
+    <input type="password" id="tokenInput" placeholder="ghp_xxxx...">
+    <button onclick="saveTokenAndContinue()">저장</button>
+    <button class="skip" onclick="skipToken()">나중에</button>
+    <small><a href="https://github.com/settings/tokens/new?scopes=repo" target="_blank">토큰 생성하기</a> → repo 체크</small>
+  </div>
 </div>
 
 <div id="app" style="display:none;">
-  <div class="header">
-    <h1>🔬 AIBA Lab Admin</h1>
-    <div class="header-right">
-      <span id="tokenStatus"></span>
-      <button onclick="resetToken()">🔑 토큰 변경</button>
-      <button onclick="logout()">로그아웃</button>
+  <div class="container">
+    <header>
+      <h1>🔬 AIBA Lab Admin</h1>
+      <div class="header-actions">
+        <span id="tokenStatus">🟢 자동저장</span>
+        <button onclick="resetToken()">토큰 변경</button>
+        <button onclick="logout()">로그아웃</button>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <button class="active" onclick="showTab('members')">Members</button>
+      <button onclick="showTab('publications')">Publications</button>
+      <button onclick="showTab('teaching')">Teaching</button>
+      <button onclick="showTab('industry')">Industry</button>
+      <button onclick="showTab('gallery')">Gallery</button>
     </div>
+
+    <div id="status" class="status"></div>
+
+    <!-- Members -->
+    <div id="members" class="section active">
+      <div class="section-header">
+        <h2>Members</h2>
+        <button class="add-btn" onclick="addItem('members')">+ 추가</button>
+      </div>
+      <div id="membersList" class="items"></div>
+    </div>
+
+    <!-- Publications -->
+    <div id="publications" class="section">
+      <div class="section-header">
+        <h2>Publications</h2>
+        <div class="section-actions">
+          <div class="doi-input">
+            <input type="text" id="doiInput" placeholder="DOI 입력 (예: 10.1287/mnsc.2023.4812)">
+            <button onclick="fetchDOI()">DOI로 추가</button>
+          </div>
+          <button class="add-btn" onclick="addItem('publications')">+ 수동 추가</button>
+        </div>
+      </div>
+      <div id="publicationsList" class="items"></div>
+    </div>
+
+    <!-- Teaching -->
+    <div id="teaching" class="section">
+      <div class="section-header">
+        <h2>Teaching</h2>
+        <button class="add-btn" onclick="addItem('teaching')">+ 추가</button>
+      </div>
+      <div id="teachingList" class="items"></div>
+    </div>
+
+    <!-- Industry -->
+    <div id="industry" class="section">
+      <div class="section-header">
+        <h2>Industry</h2>
+        <button class="add-btn" onclick="addItem('industry')">+ 추가</button>
+      </div>
+      <div id="industryList" class="items"></div>
+    </div>
+
+    <!-- Gallery -->
+    <div id="gallery" class="section">
+      <div class="section-header">
+        <h2>Gallery</h2>
+        <button class="add-btn" onclick="addItem('gallery')">+ 추가</button>
+      </div>
+      <div id="galleryList" class="items"></div>
+    </div>
+
+    <div class="spacer"></div>
   </div>
 
-  <div class="tabs">
-    <button class="active" onclick="showTab('members')">👥 Members</button>
-    <button onclick="showTab('publications')">📚 Publications</button>
-    <button onclick="showTab('teaching')">🎓 Teaching</button>
-    <button onclick="showTab('industry')">🏢 Industry</button>
-    <button onclick="showTab('gallery')">🖼️ Gallery</button>
+  <div class="save-bar">
+    <button class="save-btn" onclick="saveAll()">💾 저장하기</button>
   </div>
-
-  <div id="status" class="status"></div>
-
-  <!-- Members -->
-  <div id="members" class="section active">
-    <h2>👥 Members <button class="add-btn" onclick="addMember()">+ 멤버 추가</button></h2>
-    <div id="membersList"></div>
-  </div>
-
-  <!-- Publications -->
-  <div id="publications" class="section">
-    <h2>📚 Publications <button class="add-btn" onclick="addPub()">+ 논문 추가</button></h2>
-    <div id="pubsList"></div>
-  </div>
-
-  <!-- Teaching -->
-  <div id="teaching" class="section">
-    <h2>🎓 Teaching <button class="add-btn" onclick="addTeaching()">+ 강의 추가</button></h2>
-    <div id="teachingList"></div>
-  </div>
-
-  <!-- Industry -->
-  <div id="industry" class="section">
-    <h2>🏢 Industry <button class="add-btn" onclick="addIndustry()">+ 파트너 추가</button></h2>
-    <div id="industryList"></div>
-  </div>
-
-  <!-- Gallery -->
-  <div id="gallery" class="section">
-    <h2>🖼️ Gallery <button class="add-btn" onclick="addGallery()">+ 사진 추가</button></h2>
-    <div id="galleryList"></div>
-  </div>
-
-  <button class="save-btn" onclick="saveAll()">💾 저장하기</button>
 </div>
 
 <script>
 const PASSWORD = '1234';
 const REPO = 'aiba-kaist/aiba-kaist.github.io';
-
 let data = { members: [], publications: [], teaching: [], industry: [], gallery: [] };
+let draggedItem = null;
+let draggedType = null;
 
-// ============ 로그인/토큰 ============
 function checkPassword() {
   if (document.getElementById('password').value === PASSWORD) {
     document.getElementById('loginScreen').style.display = 'none';
-    
-    // 토큰이 있는지 확인
-    const token = localStorage.getItem('ghToken');
-    if (token) {
-      showApp();
-    } else {
-      document.getElementById('tokenScreen').style.display = 'block';
-    }
-  } else {
-    alert('비밀번호가 틀렸습니다');
-  }
+    localStorage.getItem('ghToken') ? showApp() : document.getElementById('tokenScreen').style.display = 'flex';
+  } else alert('비밀번호가 틀렸습니다');
 }
 
 function saveTokenAndContinue() {
-  const token = document.getElementById('tokenInput').value.trim();
-  if (token) {
-    localStorage.setItem('ghToken', token);
-  }
+  const t = document.getElementById('tokenInput').value.trim();
+  if (t) localStorage.setItem('ghToken', t);
   showApp();
 }
 
-function skipToken() {
-  showApp();
-}
+function skipToken() { showApp(); }
 
 function showApp() {
   document.getElementById('tokenScreen').style.display = 'none';
@@ -182,43 +244,36 @@ function showApp() {
 }
 
 function updateTokenStatus() {
-  const token = localStorage.getItem('ghToken');
   const el = document.getElementById('tokenStatus');
-  if (token) {
-    el.innerHTML = '🟢 자동저장';
-    el.style.color = '#28a745';
+  if (localStorage.getItem('ghToken')) {
+    el.textContent = '🟢 자동저장';
+    el.style.background = '#d3f9d8';
+    el.style.color = '#2f9e44';
   } else {
-    el.innerHTML = '🟡 수동저장';
-    el.style.color = '#ffc107';
+    el.textContent = '🟡 수동저장';
+    el.style.background = '#fff3bf';
+    el.style.color = '#e67700';
   }
 }
 
 function resetToken() {
-  const newToken = prompt('새 GitHub Token 입력:');
-  if (newToken !== null) {
-    if (newToken.trim()) {
-      localStorage.setItem('ghToken', newToken.trim());
-    } else {
-      localStorage.removeItem('ghToken');
-    }
+  const t = prompt('새 GitHub Token:');
+  if (t !== null) {
+    t.trim() ? localStorage.setItem('ghToken', t.trim()) : localStorage.removeItem('ghToken');
     updateTokenStatus();
   }
 }
 
 function logout() {
   document.getElementById('app').style.display = 'none';
-  document.getElementById('loginScreen').style.display = 'block';
+  document.getElementById('loginScreen').style.display = 'flex';
   document.getElementById('password').value = '';
-}
-
-function getToken() {
-  return localStorage.getItem('ghToken') || '';
 }
 
 function showTab(tab) {
   document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelector(`.tabs button[onclick="showTab('${tab}')"]`).classList.add('active');
+  event.target.classList.add('active');
   document.getElementById(tab).classList.add('active');
 }
 
@@ -226,429 +281,343 @@ function showStatus(msg, type) {
   const el = document.getElementById('status');
   el.textContent = msg;
   el.className = 'status ' + type;
-  if (type !== 'loading') {
-    setTimeout(() => el.className = 'status', 4000);
-  }
+  if (type !== 'loading') setTimeout(() => el.className = 'status', 3000);
 }
 
-// ============ 이미지 업로드 ============
-async function uploadImage(file, folder) {
-  const token = getToken();
-  if (!token) {
-    alert('GitHub Token이 필요합니다. 우측 상단 "🔑 토큰 변경"을 클릭하세요.');
-    return null;
-  }
-
-  showStatus('📷 이미지 업로드 중...', 'loading');
-
-  const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').toLowerCase();
-  const path = `assets/img/${folder}/${safeName}`;
-
-  const base64 = await new Promise((resolve) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result.split(',')[1]);
-    reader.readAsDataURL(file);
-  });
-
+// DOI Fetch
+async function fetchDOI() {
+  const doiInput = document.getElementById('doiInput');
+  let doi = doiInput.value.trim();
+  if (!doi) { alert('DOI를 입력하세요'); return; }
+  
+  // Clean DOI
+  doi = doi.replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
+  
+  showStatus('DOI 정보 가져오는 중...', 'loading');
+  
   try {
-    let sha = '';
-    try {
-      const getRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
-        headers: { 'Authorization': `token ${token}` }
-      });
-      if (getRes.ok) sha = (await getRes.json()).sha;
-    } catch (e) {}
-
-    const body = { message: `Upload ${safeName}`, content: base64, branch: 'main' };
-    if (sha) body.sha = sha;
-
-    const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
-      method: 'PUT',
-      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
-    });
-
-    if (res.ok) {
-      showStatus('✅ 이미지 업로드 완료!', 'success');
-      return safeName;
-    } else {
-      const err = await res.json();
-      showStatus('❌ 업로드 실패: ' + err.message, 'error');
-      return null;
-    }
+    const res = await fetch(`https://api.crossref.org/works/${encodeURIComponent(doi)}`);
+    if (!res.ok) throw new Error('DOI를 찾을 수 없습니다');
+    
+    const json = await res.json();
+    const work = json.message;
+    
+    // Extract data
+    const title = work.title?.[0] || '';
+    const authors = work.author?.map(a => `${a.family}, ${a.given}`).join(' and ') || '';
+    const venue = work['container-title']?.[0] || work.publisher || '';
+    const year = work.published?.['date-parts']?.[0]?.[0] || work.created?.['date-parts']?.[0]?.[0] || '';
+    const type = work.type === 'journal-article' ? 'journal' : 'conference';
+    
+    // Generate abbreviation
+    const words = venue.split(' ').filter(w => w.length > 2);
+    const abbr = words.length > 1 ? words.map(w => w[0]).join('').toUpperCase().slice(0, 4) : venue.slice(0, 4).toUpperCase();
+    
+    const pub = { title, authors, venue, year: parseInt(year), type, abbr, doi, selected: false };
+    data.publications.unshift(pub);
+    renderPublications();
+    
+    doiInput.value = '';
+    showStatus(`✅ 추가됨: ${title.slice(0, 50)}...`, 'success');
   } catch (e) {
-    showStatus('❌ 업로드 오류: ' + e.message, 'error');
-    return null;
+    showStatus('❌ ' + e.message, 'error');
   }
 }
 
-async function handlePhotoUpload(input, index, type, folder) {
-  const file = input.files[0];
-  if (!file) return;
-
-  const filename = await uploadImage(file, folder);
-  if (filename) {
-    if (type === 'members') data.members[index].photo = filename;
-    else if (type === 'industry') data.industry[index].logo = filename;
-    else if (type === 'gallery') data.gallery[index].image = filename;
-    renderAll();
-  }
+// Drag & Drop
+function handleDragStart(e, type, index) {
+  draggedItem = index;
+  draggedType = type;
+  e.target.classList.add('dragging');
 }
 
-// ============ MEMBERS ============
-function renderMembers() {
-  const container = document.getElementById('membersList');
-  if (data.members.length === 0) {
-    container.innerHTML = '<div class="empty-state">멤버가 없습니다. "멤버 추가" 버튼을 클릭하세요.</div>';
-    return;
-  }
-  
-  // 역할 순서대로 정렬
-  const roleOrder = ['Faculty', 'PhD', 'MS', 'Undergrad', 'Alumni'];
-  const sorted = [...data.members].sort((a, b) => roleOrder.indexOf(a.role) - roleOrder.indexOf(b.role));
-  
-  container.innerHTML = sorted.map((m, idx) => {
-    const i = data.members.indexOf(m);
-    return `
-    <div class="item">
-      <div class="item-header">
-        <span class="item-title">${m.name_en || '이름 없음'} · ${m.role || ''}</span>
-        <button class="delete" onclick="deleteMember(${i})">삭제</button>
-      </div>
-      <div class="form-row">
-        <label>사진</label>
-        <div class="photo-upload">
-          ${m.photo 
-            ? `<img class="photo-preview" src="https://raw.githubusercontent.com/${REPO}/main/assets/img/members/${m.photo}?t=${Date.now()}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23e9ecef%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%236c757d%22 font-size=%2240%22>👤</text></svg>'">`
-            : `<div class="photo-placeholder">👤</div>`
-          }
-          <input type="file" id="photo_${i}" accept="image/*" onchange="handlePhotoUpload(this, ${i}, 'members', 'members')">
-          <button class="upload-btn" onclick="document.getElementById('photo_${i}').click()">📷 업로드</button>
-          ${m.photo ? `<span class="photo-filename">${m.photo}</span>` : ''}
-        </div>
-      </div>
-      <div class="form-grid">
-        <div class="form-row">
-          <label>이름 (영문)</label>
-          <input value="${m.name_en || ''}" onchange="data.members[${i}].name_en=this.value">
-        </div>
-        <div class="form-row">
-          <label>역할</label>
-          <select onchange="data.members[${i}].role=this.value; renderMembers();">
-            <option ${m.role==='Faculty'?'selected':''}>Faculty</option>
-            <option ${m.role==='PhD'?'selected':''}>PhD</option>
-            <option ${m.role==='MS'?'selected':''}>MS</option>
-            <option ${m.role==='Undergrad'?'selected':''}>Undergrad</option>
-            <option ${m.role==='Alumni'?'selected':''}>Alumni</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-grid">
-        <div class="form-row">
-          <label>연구분야</label>
-          <input value="${m.research_area || ''}" onchange="data.members[${i}].research_area=this.value">
-        </div>
-        <div class="form-row">
-          <label>이메일</label>
-          <input value="${m.email || ''}" onchange="data.members[${i}].email=this.value">
-        </div>
-      </div>
-      ${m.role === 'Alumni' ? `
-      <div class="form-row">
-        <label>졸업정보</label>
-        <input value="${m.graduation_info || ''}" onchange="data.members[${i}].graduation_info=this.value" placeholder="예: M.S. 2025 · PwC">
-      </div>
-      ` : ''}
-    </div>
-  `}).join('');
+function handleDragEnd(e) {
+  e.target.classList.remove('dragging');
+  document.querySelectorAll('.item').forEach(el => el.classList.remove('drag-over'));
 }
-function addMember() { data.members.push({ role: 'PhD' }); renderMembers(); }
-function deleteMember(i) { if(confirm('삭제하시겠습니까?')) { data.members.splice(i, 1); renderMembers(); } }
 
-// ============ PUBLICATIONS ============
-function renderPubs() {
-  const container = document.getElementById('pubsList');
-  if (data.publications.length === 0) {
-    container.innerHTML = '<div class="empty-state">논문이 없습니다. "논문 추가" 버튼을 클릭하세요.</div>';
-    return;
-  }
-  
-  // 연도순 정렬
-  const sorted = [...data.publications].sort((a, b) => (b.year || 0) - (a.year || 0));
-  
-  container.innerHTML = sorted.map((p, idx) => {
-    const i = data.publications.indexOf(p);
-    return `
-    <div class="item">
-      <div class="item-header">
-        <span class="item-title">[${p.year || ''}] ${p.abbr || ''} - ${(p.title || '제목 없음').substring(0, 50)}${(p.title || '').length > 50 ? '...' : ''}</span>
-        <button class="delete" onclick="deletePub(${i})">삭제</button>
-      </div>
-      <div class="form-row">
-        <label>제목</label>
-        <input value="${p.title || ''}" onchange="data.publications[${i}].title=this.value">
-      </div>
-      <div class="form-row">
-        <label>저자</label>
-        <input value="${p.authors || ''}" onchange="data.publications[${i}].authors=this.value" placeholder="Lee, Suhyeon and Shin, Donghyuk">
-      </div>
-      <div class="form-grid">
-        <div class="form-row">
-          <label>유형</label>
-          <select onchange="data.publications[${i}].type=this.value">
-            <option ${p.type==='journal'?'selected':''}>journal</option>
-            <option ${p.type==='conference'?'selected':''}>conference</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label>연도</label>
-          <input type="number" value="${p.year || ''}" onchange="data.publications[${i}].year=parseInt(this.value)">
-        </div>
-      </div>
-      <div class="form-grid">
-        <div class="form-row">
-          <label>학회/저널명</label>
-          <input value="${p.venue || ''}" onchange="data.publications[${i}].venue=this.value">
-        </div>
-        <div class="form-row">
-          <label>약어 (예: MISQ, CIKM)</label>
-          <input value="${p.abbr || ''}" onchange="data.publications[${i}].abbr=this.value">
-        </div>
-      </div>
-      <div class="form-grid">
-        <div class="form-row">
-          <label>수상 (선택)</label>
-          <input value="${p.award || ''}" onchange="data.publications[${i}].award=this.value">
-        </div>
-        <div class="form-row">
-          <label style="margin-top:25px;"><input type="checkbox" ${p.selected?'checked':''} onchange="data.publications[${i}].selected=this.checked"> Featured (메인 페이지에 표시)</label>
-        </div>
-      </div>
-    </div>
-  `}).join('');
+function handleDragOver(e) {
+  e.preventDefault();
+  e.target.closest('.item')?.classList.add('drag-over');
 }
-function addPub() { data.publications.push({ type: 'conference', year: new Date().getFullYear() }); renderPubs(); }
-function deletePub(i) { if(confirm('삭제하시겠습니까?')) { data.publications.splice(i, 1); renderPubs(); } }
 
-// ============ TEACHING ============
-function renderTeaching() {
-  const container = document.getElementById('teachingList');
-  if (data.teaching.length === 0) {
-    container.innerHTML = '<div class="empty-state">강의가 없습니다. "강의 추가" 버튼을 클릭하세요.</div>';
-    return;
-  }
-  
-  // 현재 강의 먼저
-  const sorted = [...data.teaching].sort((a, b) => (b.is_current ? 1 : 0) - (a.is_current ? 1 : 0));
-  
-  container.innerHTML = sorted.map((t, idx) => {
-    const i = data.teaching.indexOf(t);
-    return `
-    <div class="item">
-      <div class="item-header">
-        <span class="item-title">${t.is_current ? '🟢' : '⚪'} ${t.course_code || ''} ${t.course_name || '강의명 없음'}</span>
-        <button class="delete" onclick="deleteTeaching(${i})">삭제</button>
-      </div>
-      <div class="form-grid">
-        <div class="form-row">
-          <label>과목코드</label>
-          <input value="${t.course_code || ''}" onchange="data.teaching[${i}].course_code=this.value" placeholder="MGT 562">
-        </div>
-        <div class="form-row">
-          <label>과목명</label>
-          <input value="${t.course_name || ''}" onchange="data.teaching[${i}].course_name=this.value">
-        </div>
-      </div>
-      <div class="form-row">
-        <label>설명</label>
-        <textarea onchange="data.teaching[${i}].description=this.value">${t.description || ''}</textarea>
-      </div>
-      <div class="form-grid">
-        <div class="form-row">
-          <label>학기 (과거 강의용)</label>
-          <input value="${t.semester || ''}" onchange="data.teaching[${i}].semester=this.value" placeholder="2024 Spring">
-        </div>
-        <div class="form-row">
-          <label style="margin-top:25px;"><input type="checkbox" ${t.is_current?'checked':''} onchange="data.teaching[${i}].is_current=this.checked; renderTeaching();"> 현재 진행 중인 강의</label>
-        </div>
-      </div>
-    </div>
-  `}).join('');
+function handleDragLeave(e) {
+  e.target.closest('.item')?.classList.remove('drag-over');
 }
-function addTeaching() { data.teaching.push({ is_current: true }); renderTeaching(); }
-function deleteTeaching(i) { if(confirm('삭제하시겠습니까?')) { data.teaching.splice(i, 1); renderTeaching(); } }
 
-// ============ INDUSTRY ============
-function renderIndustry() {
-  const container = document.getElementById('industryList');
-  if (data.industry.length === 0) {
-    container.innerHTML = '<div class="empty-state">파트너가 없습니다. "파트너 추가" 버튼을 클릭하세요.</div>';
-    return;
-  }
-  
-  container.innerHTML = data.industry.map((p, i) => `
-    <div class="item">
-      <div class="item-header">
-        <span class="item-title">${p.name || '이름 없음'} · ${p.type || ''}</span>
-        <button class="delete" onclick="deleteIndustry(${i})">삭제</button>
-      </div>
-      <div class="form-row">
-        <label>로고</label>
-        <div class="photo-upload">
-          ${p.logo 
-            ? `<img class="photo-preview" style="border-radius:8px;" src="https://raw.githubusercontent.com/${REPO}/main/assets/img/partners/${p.logo}?t=${Date.now()}" onerror="this.style.display='none'">`
-            : `<div class="photo-placeholder" style="border-radius:8px;">🏢</div>`
-          }
-          <input type="file" id="logo_${i}" accept="image/*" onchange="handlePhotoUpload(this, ${i}, 'industry', 'partners')">
-          <button class="upload-btn" onclick="document.getElementById('logo_${i}').click()">📷 업로드</button>
-          ${p.logo ? `<span class="photo-filename">${p.logo}</span>` : ''}
-        </div>
-      </div>
-      <div class="form-grid">
-        <div class="form-row">
-          <label>이름</label>
-          <input value="${p.name || ''}" onchange="data.industry[${i}].name=this.value">
-        </div>
-        <div class="form-row">
-          <label>유형</label>
-          <select onchange="data.industry[${i}].type=this.value">
-            <option ${p.type==='Collaborator'?'selected':''}>Collaborator</option>
-            <option ${p.type==='Funding'?'selected':''}>Funding</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-function addIndustry() { data.industry.push({ type: 'Collaborator' }); renderIndustry(); }
-function deleteIndustry(i) { if(confirm('삭제하시겠습니까?')) { data.industry.splice(i, 1); renderIndustry(); } }
-
-// ============ GALLERY ============
-function renderGallery() {
-  const container = document.getElementById('galleryList');
-  if (data.gallery.length === 0) {
-    container.innerHTML = '<div class="empty-state">사진이 없습니다. "사진 추가" 버튼을 클릭하세요.</div>';
-    return;
-  }
-  
-  container.innerHTML = data.gallery.map((g, i) => `
-    <div class="item">
-      <div class="item-header">
-        <span class="item-title">${g.caption || '캡션 없음'} · ${g.category || ''}</span>
-        <button class="delete" onclick="deleteGallery(${i})">삭제</button>
-      </div>
-      <div class="form-row">
-        <label>이미지</label>
-        <div class="photo-upload">
-          ${g.image 
-            ? `<img class="photo-preview" style="border-radius:8px;width:120px;height:80px;" src="https://raw.githubusercontent.com/${REPO}/main/assets/img/gallery/${g.image}?t=${Date.now()}" onerror="this.style.display='none'">`
-            : `<div class="photo-placeholder" style="border-radius:8px;width:120px;height:80px;">🖼️</div>`
-          }
-          <input type="file" id="gallery_${i}" accept="image/*" onchange="handlePhotoUpload(this, ${i}, 'gallery', 'gallery')">
-          <button class="upload-btn" onclick="document.getElementById('gallery_${i}').click()">📷 업로드</button>
-          ${g.image ? `<span class="photo-filename">${g.image}</span>` : ''}
-        </div>
-      </div>
-      <div class="form-grid">
-        <div class="form-row">
-          <label>캡션</label>
-          <input value="${g.caption || ''}" onchange="data.gallery[${i}].caption=this.value">
-        </div>
-        <div class="form-row">
-          <label>카테고리</label>
-          <select onchange="data.gallery[${i}].category=this.value">
-            <option ${g.category==='Conferences'?'selected':''}>Conferences</option>
-            <option ${g.category==='Lab Life'?'selected':''}>Lab Life</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-function addGallery() { data.gallery.push({ category: 'Lab Life' }); renderGallery(); }
-function deleteGallery(i) { if(confirm('삭제하시겠습니까?')) { data.gallery.splice(i, 1); renderGallery(); } }
-
-// ============ LOAD / SAVE ============
-async function loadData() {
-  showStatus('📥 데이터 불러오는 중...', 'loading');
-  try {
-    const res = await fetch(`https://raw.githubusercontent.com/${REPO}/main/_data/admin_data.json?t=${Date.now()}`);
-    if (res.ok) {
-      const loaded = await res.json();
-      // 기존 데이터와 병합
-      data.members = loaded.members || [];
-      data.publications = loaded.publications || [];
-      data.teaching = loaded.teaching || [];
-      data.industry = loaded.industry || [];
-      data.gallery = loaded.gallery || [];
-      showStatus('✅ 데이터 로드 완료! ' + data.members.length + '명의 멤버, ' + data.publications.length + '개의 논문', 'success');
-    } else {
-      showStatus('새 데이터로 시작합니다.', 'success');
-    }
-  } catch (e) {
-    showStatus('새 데이터로 시작합니다.', 'success');
-  }
+function handleDrop(e, type, index) {
+  e.preventDefault();
+  if (draggedType !== type || draggedItem === index) return;
+  const arr = data[type];
+  const item = arr.splice(draggedItem, 1)[0];
+  arr.splice(index, 0, item);
   renderAll();
 }
 
-function renderAll() {
-  renderMembers();
-  renderPubs();
-  renderTeaching();
-  renderIndustry();
-  renderGallery();
+function toggleEdit(el) {
+  el.closest('.item').classList.toggle('editing');
+}
+
+// Image upload
+async function uploadImage(file, folder) {
+  const token = localStorage.getItem('ghToken');
+  if (!token) { alert('토큰이 필요합니다'); return null; }
+  showStatus('업로드 중...', 'loading');
+  const name = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').toLowerCase();
+  const path = `assets/img/${folder}/${name}`;
+  const base64 = await new Promise(r => { const fr = new FileReader(); fr.onload = () => r(fr.result.split(',')[1]); fr.readAsDataURL(file); });
+  try {
+    let sha = '';
+    try { const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, { headers: { Authorization: `token ${token}` } }); if (res.ok) sha = (await res.json()).sha; } catch {}
+    const body = { message: `Upload ${name}`, content: base64, branch: 'main' };
+    if (sha) body.sha = sha;
+    const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, { method: 'PUT', headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    if (res.ok) { showStatus('업로드 완료!', 'success'); return name; }
+    showStatus('업로드 실패', 'error'); return null;
+  } catch (e) { showStatus('오류: ' + e.message, 'error'); return null; }
+}
+
+async function handleUpload(input, type, index, field, folder) {
+  const file = input.files[0];
+  if (!file) return;
+  const name = await uploadImage(file, folder);
+  if (name) { data[type][index][field] = name; renderAll(); }
+}
+
+// Render
+function renderMembers() {
+  const c = document.getElementById('membersList');
+  if (!data.members.length) { c.innerHTML = '<div class="empty"><div class="empty-icon">👥</div>멤버가 없습니다</div>'; return; }
+  c.innerHTML = data.members.map((m, i) => `
+    <div class="item" draggable="true" ondragstart="handleDragStart(event,'members',${i})" ondragend="handleDragEnd(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,'members',${i})">
+      <div class="item-main">
+        <span class="drag-handle">⋮⋮</span>
+        ${m.photo ? `<img class="item-photo" src="https://raw.githubusercontent.com/${REPO}/main/assets/img/members/${m.photo}?t=${Date.now()}" onerror="this.style.display='none'">` : `<div class="item-photo" style="display:flex;align-items:center;justify-content:center;color:#868e96">👤</div>`}
+        <div class="item-info">
+          <div class="item-title">${m.name_en || '이름 없음'}</div>
+          <div class="item-sub">${m.research_area || ''}</div>
+        </div>
+        <span class="item-badge">${m.role || ''}</span>
+        <div class="item-actions">
+          <button onclick="toggleEdit(this)">수정</button>
+          <button class="delete" onclick="deleteItem('members',${i})">삭제</button>
+        </div>
+      </div>
+      <div class="item-edit">
+        <div class="form-row">
+          <label>사진</label>
+          <div class="photo-upload">
+            ${m.photo ? `<img src="https://raw.githubusercontent.com/${REPO}/main/assets/img/members/${m.photo}?t=${Date.now()}">` : '<div class="placeholder">👤</div>'}
+            <input type="file" id="mp${i}" accept="image/*" onchange="handleUpload(this,'members',${i},'photo','members')" style="display:none">
+            <button class="upload-btn" onclick="document.getElementById('mp${i}').click()">업로드</button>
+            ${m.photo ? `<span style="font-size:12px;color:#868e96">${m.photo}</span>` : ''}
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-row"><label>이름 (영문)</label><input value="${m.name_en||''}" onchange="data.members[${i}].name_en=this.value"></div>
+          <div class="form-row"><label>역할</label><select onchange="data.members[${i}].role=this.value;renderMembers()"><option ${m.role==='Faculty'?'selected':''}>Faculty</option><option ${m.role==='PhD'?'selected':''}>PhD</option><option ${m.role==='MS'?'selected':''}>MS</option><option ${m.role==='Undergrad'?'selected':''}>Undergrad</option><option ${m.role==='Alumni'?'selected':''}>Alumni</option></select></div>
+          <div class="form-row"><label>연구분야</label><input value="${m.research_area||''}" onchange="data.members[${i}].research_area=this.value"></div>
+          <div class="form-row"><label>이메일</label><input value="${m.email||''}" onchange="data.members[${i}].email=this.value"></div>
+        </div>
+        ${m.role==='Alumni'?`<div class="form-row"><label>졸업정보</label><input value="${m.graduation_info||''}" onchange="data.members[${i}].graduation_info=this.value" placeholder="M.S. 2025 · PwC"></div>`:''}
+        ${m.role==='Faculty'?`<div class="form-row"><label>약력</label><textarea onchange="data.members[${i}].bio=this.value">${m.bio||''}</textarea></div>`:''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderPublications() {
+  const c = document.getElementById('publicationsList');
+  if (!data.publications.length) { c.innerHTML = '<div class="empty"><div class="empty-icon">📚</div>논문이 없습니다</div>'; return; }
+  c.innerHTML = data.publications.map((p, i) => `
+    <div class="item" draggable="true" ondragstart="handleDragStart(event,'publications',${i})" ondragend="handleDragEnd(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,'publications',${i})">
+      <div class="item-main">
+        <span class="drag-handle">⋮⋮</span>
+        <div class="item-info">
+          <div class="item-title">${p.title || '제목 없음'}</div>
+          <div class="item-sub">${p.authors || ''}</div>
+        </div>
+        <span class="item-badge">${p.abbr || ''}</span>
+        <span class="item-badge">${p.year || ''}</span>
+        ${p.selected ? `<span class="item-badge featured">★</span>` : ''}
+        ${p.award ? `<span class="item-badge award">🏆</span>` : ''}
+        <div class="item-actions">
+          <button onclick="toggleEdit(this)">수정</button>
+          <button class="delete" onclick="deleteItem('publications',${i})">삭제</button>
+        </div>
+      </div>
+      <div class="item-edit">
+        <div class="form-row"><label>제목</label><input value="${p.title||''}" onchange="data.publications[${i}].title=this.value"></div>
+        <div class="form-row"><label>저자</label><input value="${p.authors||''}" onchange="data.publications[${i}].authors=this.value"></div>
+        <div class="form-grid">
+          <div class="form-row"><label>학회/저널</label><input value="${p.venue||''}" onchange="data.publications[${i}].venue=this.value"></div>
+          <div class="form-row"><label>약어</label><input value="${p.abbr||''}" onchange="data.publications[${i}].abbr=this.value" placeholder="MISQ, CIKM"></div>
+          <div class="form-row"><label>연도</label><input type="number" value="${p.year||''}" onchange="data.publications[${i}].year=parseInt(this.value)"></div>
+          <div class="form-row"><label>유형</label><select onchange="data.publications[${i}].type=this.value"><option ${p.type==='journal'?'selected':''}>journal</option><option ${p.type==='conference'?'selected':''}>conference</option></select></div>
+        </div>
+        <div class="form-grid">
+          <div class="form-row"><label>수상</label><input value="${p.award||''}" onchange="data.publications[${i}].award=this.value"></div>
+          <div class="form-row"><label>DOI</label><input value="${p.doi||''}" onchange="data.publications[${i}].doi=this.value"></div>
+        </div>
+        <div class="form-row"><label class="form-check"><input type="checkbox" ${p.selected?'checked':''} onchange="data.publications[${i}].selected=this.checked"> Featured (메인 페이지에 표시)</label></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderTeaching() {
+  const c = document.getElementById('teachingList');
+  if (!data.teaching.length) { c.innerHTML = '<div class="empty"><div class="empty-icon">🎓</div>강의가 없습니다</div>'; return; }
+  c.innerHTML = data.teaching.map((t, i) => `
+    <div class="item" draggable="true" ondragstart="handleDragStart(event,'teaching',${i})" ondragend="handleDragEnd(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,'teaching',${i})">
+      <div class="item-main">
+        <span class="drag-handle">⋮⋮</span>
+        <div class="item-info">
+          <div class="item-title">${t.course_code ? t.course_code + ' ' : ''}${t.course_name || '강의명 없음'}</div>
+          <div class="item-sub">${t.description || ''}</div>
+        </div>
+        <span class="item-badge">${t.is_current ? '현재' : t.semester || ''}</span>
+        <div class="item-actions">
+          <button onclick="toggleEdit(this)">수정</button>
+          <button class="delete" onclick="deleteItem('teaching',${i})">삭제</button>
+        </div>
+      </div>
+      <div class="item-edit">
+        <div class="form-grid">
+          <div class="form-row"><label>과목코드</label><input value="${t.course_code||''}" onchange="data.teaching[${i}].course_code=this.value"></div>
+          <div class="form-row"><label>과목명</label><input value="${t.course_name||''}" onchange="data.teaching[${i}].course_name=this.value"></div>
+        </div>
+        <div class="form-row"><label>설명</label><textarea onchange="data.teaching[${i}].description=this.value">${t.description||''}</textarea></div>
+        <div class="form-grid">
+          <div class="form-row"><label>학기</label><input value="${t.semester||''}" onchange="data.teaching[${i}].semester=this.value" placeholder="2024 Spring"></div>
+          <div class="form-row"><label class="form-check" style="margin-top:24px"><input type="checkbox" ${t.is_current?'checked':''} onchange="data.teaching[${i}].is_current=this.checked;renderTeaching()"> 현재 진행 중</label></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderIndustry() {
+  const c = document.getElementById('industryList');
+  if (!data.industry.length) { c.innerHTML = '<div class="empty"><div class="empty-icon">🏢</div>파트너가 없습니다</div>'; return; }
+  c.innerHTML = data.industry.map((p, i) => `
+    <div class="item" draggable="true" ondragstart="handleDragStart(event,'industry',${i})" ondragend="handleDragEnd(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,'industry',${i})">
+      <div class="item-main">
+        <span class="drag-handle">⋮⋮</span>
+        ${p.logo ? `<img class="item-photo rect" src="https://raw.githubusercontent.com/${REPO}/main/assets/img/partners/${p.logo}?t=${Date.now()}">` : `<div class="item-photo rect" style="display:flex;align-items:center;justify-content:center;color:#868e96">🏢</div>`}
+        <div class="item-info"><div class="item-title">${p.name || '이름 없음'}</div></div>
+        <span class="item-badge">${p.type || ''}</span>
+        <div class="item-actions">
+          <button onclick="toggleEdit(this)">수정</button>
+          <button class="delete" onclick="deleteItem('industry',${i})">삭제</button>
+        </div>
+      </div>
+      <div class="item-edit">
+        <div class="form-row">
+          <label>로고</label>
+          <div class="photo-upload">
+            ${p.logo ? `<img style="border-radius:6px" src="https://raw.githubusercontent.com/${REPO}/main/assets/img/partners/${p.logo}?t=${Date.now()}">` : '<div class="placeholder" style="border-radius:6px">🏢</div>'}
+            <input type="file" id="ip${i}" accept="image/*" onchange="handleUpload(this,'industry',${i},'logo','partners')" style="display:none">
+            <button class="upload-btn" onclick="document.getElementById('ip${i}').click()">업로드</button>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-row"><label>이름</label><input value="${p.name||''}" onchange="data.industry[${i}].name=this.value"></div>
+          <div class="form-row"><label>유형</label><select onchange="data.industry[${i}].type=this.value"><option ${p.type==='Collaborator'?'selected':''}>Collaborator</option><option ${p.type==='Funding'?'selected':''}>Funding</option></select></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderGallery() {
+  const c = document.getElementById('galleryList');
+  if (!data.gallery.length) { c.innerHTML = '<div class="empty"><div class="empty-icon">🖼️</div>사진이 없습니다</div>'; return; }
+  c.innerHTML = data.gallery.map((g, i) => `
+    <div class="item" draggable="true" ondragstart="handleDragStart(event,'gallery',${i})" ondragend="handleDragEnd(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,'gallery',${i})">
+      <div class="item-main">
+        <span class="drag-handle">⋮⋮</span>
+        ${g.image ? `<img class="item-photo rect" src="https://raw.githubusercontent.com/${REPO}/main/assets/img/gallery/${g.image}?t=${Date.now()}">` : `<div class="item-photo rect" style="display:flex;align-items:center;justify-content:center;color:#868e96">🖼️</div>`}
+        <div class="item-info"><div class="item-title">${g.caption || '캡션 없음'}</div></div>
+        <span class="item-badge">${g.category || ''}</span>
+        <div class="item-actions">
+          <button onclick="toggleEdit(this)">수정</button>
+          <button class="delete" onclick="deleteItem('gallery',${i})">삭제</button>
+        </div>
+      </div>
+      <div class="item-edit">
+        <div class="form-row">
+          <label>이미지</label>
+          <div class="photo-upload">
+            ${g.image ? `<img style="border-radius:6px;width:80px;height:50px" src="https://raw.githubusercontent.com/${REPO}/main/assets/img/gallery/${g.image}?t=${Date.now()}">` : '<div class="placeholder" style="border-radius:6px;width:80px;height:50px">🖼️</div>'}
+            <input type="file" id="gp${i}" accept="image/*" onchange="handleUpload(this,'gallery',${i},'image','gallery')" style="display:none">
+            <button class="upload-btn" onclick="document.getElementById('gp${i}').click()">업로드</button>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-row"><label>캡션</label><input value="${g.caption||''}" onchange="data.gallery[${i}].caption=this.value"></div>
+          <div class="form-row"><label>카테고리</label><select onchange="data.gallery[${i}].category=this.value"><option ${g.category==='Conferences'?'selected':''}>Conferences</option><option ${g.category==='Lab Life'?'selected':''}>Lab Life</option></select></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderAll() { renderMembers(); renderPublications(); renderTeaching(); renderIndustry(); renderGallery(); }
+
+function addItem(type) {
+  const defaults = {
+    members: { role: 'PhD' },
+    publications: { type: 'conference', year: new Date().getFullYear() },
+    teaching: { is_current: true },
+    industry: { type: 'Collaborator' },
+    gallery: { category: 'Lab Life' }
+  };
+  data[type].unshift(defaults[type]);
+  renderAll();
+}
+
+function deleteItem(type, index) {
+  if (confirm('삭제하시겠습니까?')) { data[type].splice(index, 1); renderAll(); }
+}
+
+async function loadData() {
+  showStatus('데이터 불러오는 중...', 'loading');
+  try {
+    const res = await fetch(`https://raw.githubusercontent.com/${REPO}/main/_data/admin_data.json?t=${Date.now()}`);
+    if (res.ok) {
+      const d = await res.json();
+      data.members = d.members || [];
+      data.publications = d.publications || [];
+      data.teaching = d.teaching || [];
+      data.industry = d.industry || [];
+      data.gallery = d.gallery || [];
+      showStatus(`로드 완료! ${data.members.length}명, ${data.publications.length}편`, 'success');
+    } else showStatus('새 데이터로 시작', 'success');
+  } catch { showStatus('새 데이터로 시작', 'success'); }
+  renderAll();
 }
 
 async function saveAll() {
-  const token = getToken();
-  
+  const token = localStorage.getItem('ghToken');
   if (!token) {
-    // 토큰 없으면 JSON 다운로드
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'admin_data.json';
-    a.click();
-    showStatus('📥 JSON 다운로드됨. GitHub의 _data/ 폴더에 admin_data.json으로 업로드하세요.', 'success');
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'admin_data.json'; a.click();
+    showStatus('JSON 다운로드됨', 'success');
     return;
   }
-
+  showStatus('저장 중...', 'loading');
   try {
-    showStatus('💾 저장 중...', 'loading');
-    
     const path = '_data/admin_data.json';
     const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
-    
     let sha = '';
-    try {
-      const getRes = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
-        headers: { 'Authorization': `token ${token}` }
-      });
-      if (getRes.ok) sha = (await getRes.json()).sha;
-    } catch (e) {}
-
-    const body = { message: 'Update via Admin Panel', content, branch: 'main' };
+    try { const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, { headers: { Authorization: `token ${token}` } }); if (r.ok) sha = (await r.json()).sha; } catch {}
+    const body = { message: 'Update via Admin', content, branch: 'main' };
     if (sha) body.sha = sha;
-
-    const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
-      method: 'PUT',
-      headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
-    });
-
-    if (res.ok) {
-      showStatus('✅ 저장 완료! 1-2분 후 사이트에 반영됩니다.', 'success');
-    } else {
-      const err = await res.json();
-      if (err.message.includes('Bad credentials')) {
-        showStatus('❌ 토큰이 만료되었습니다. "🔑 토큰 변경"을 클릭하세요.', 'error');
-      } else {
-        showStatus('❌ 오류: ' + err.message, 'error');
-      }
-    }
-  } catch (e) {
-    showStatus('❌ 오류: ' + e.message, 'error');
-  }
+    const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, { method: 'PUT', headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    if (res.ok) showStatus('저장 완료! 1-2분 후 반영', 'success');
+    else { const e = await res.json(); showStatus('오류: ' + e.message, 'error'); }
+  } catch (e) { showStatus('오류: ' + e.message, 'error'); }
 }
 </script>
 </body>

@@ -20,22 +20,18 @@ latest_posts:
 
 Welcome to the **AI & Business Analytics (AIBA) Lab** at KAIST College of Business (School of Management Engineering), led by **Associate Professor Donghyuk Shin**.
 
-We combine AI and business analytics to empirically analyze the economic and social value of artificial intelligence. Our research lies at the intersection of **artificial intelligence** and **information systems**. Topics of interest include artificial intelligence, digital platforms, educational technology, and their business and societal impacts. We use ML, econometric analysis, and randomized field experiments.
+We combine AI and business analytics to empirically analyze the economic and social value of artificial intelligence. Our research lies at the intersection of **artificial intelligence** and **information systems**, covering diverse business domains including digital platforms, online communities, and technology-driven services. Methodologically, we employ machine learning, econometric analysis, and randomized field experiments.
 
 ## Research Areas
 
 **Economics of AI/IT**
-- Analyzing the economic impact of AI and IT technologies on business and society
-- Causal inference, field experiments, and platform economics
+- Understanding the economic and societal impact of AI and IT technologies
+- Topics: causal inference, field experiments, platform economics
 
 **AI/ML Applications**
-- Business applications of artificial intelligence and machine learning
-- LLM simulation, generative AI, and human-AI interaction
+- Developing and applying AI/ML methods to solve business problems
+- Topics: LLM simulation, generative AI, human-AI interaction
 
 **Digital Platforms**
-- Research on digital platforms, social media ecosystems, and online communities
-- Misinformation, content moderation, and platform dynamics
-
----
-
-**Prospective Students**: Our research group is actively searching for talented and enthusiastic students. Please contact us at [dhs@kaist.ac.kr](mailto:dhs@kaist.ac.kr) for more information.
+- Analyzing platform ecosystems, user behavior, and content dynamics
+- Topics: misinformation, content moderation, social media
