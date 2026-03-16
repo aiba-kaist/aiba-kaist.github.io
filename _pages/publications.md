@@ -15,13 +15,13 @@ nav_order: 3
 
 <div class="publications">
 
-## Journal Articles
+<h2 style="margin-top: 2rem; margin-bottom: 1.5rem;">Journal Articles</h2>
 
 {% bibliography --query @article* %}
 
-<div class="my-5"></div>
+<div style="margin-top: 3rem;"></div>
 
-## Conference Papers
+<h2 style="margin-top: 2rem; margin-bottom: 1.5rem;">Conference Papers</h2>
 
 {% bibliography --query @inproceedings* %}
 

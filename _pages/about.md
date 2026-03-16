@@ -22,7 +22,7 @@ Welcome to the **AI & Business Analytics (AIBA) Lab** at KAIST College of Busine
 
 We combine AI and business analytics to empirically analyze the economic and social value of artificial intelligence. Our research lies at the intersection of **artificial intelligence** and **information systems**, covering diverse business domains including digital platforms, online communities, and technology-driven services. Methodologically, we employ machine learning, econometric analysis, and randomized field experiments.
 
-## Research Areas
+## RESEARCH AREAS
 
 **Economics of AI/IT**
 - Understanding the economic and societal impact of AI and IT technologies

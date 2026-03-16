@@ -26,10 +26,3 @@ Seoul 02455, South Korea
 🌐 **Website**  
 [https://aiba-kaist.github.io](https://aiba-kaist.github.io)
 
----
-
-## Prospective Students
-
-We are always looking for talented and motivated students!
-
-If you are interested in Economics of AI/IT, AI/ML Applications in Business, or Digital Platforms and Social Media, please send your CV and a brief statement of interest to [dhs@kaist.ac.kr](mailto:dhs@kaist.ac.kr).
