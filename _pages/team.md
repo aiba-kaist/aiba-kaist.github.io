@@ -167,8 +167,8 @@ nav_order: 2
 
 <div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/park_jaehyung.jpg" alt="Jaehyung Park" style="width:150px;height:150px;object-fit:cover;">
-    <h5>Jaehyung Park</h5>
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/park_jaehyung.jpg" alt="Junhoe Park" style="width:150px;height:150px;object-fit:cover;">
+    <h5>Junhoe Park</h5>
     <p>IT/AI</p>
   </div>
   <div class="col text-center mb-4">
@@ -182,8 +182,8 @@ nav_order: 2
     <p>Financial AI</p>
   </div>
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/yoo_youngjun.png" alt="Youngjun Yoo" style="width:150px;height:150px;object-fit:cover;">
-    <h5>Youngjun Yoo</h5>
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/yoo_youngjun.png" alt="Youngjun Yu" style="width:150px;height:150px;object-fit:cover;">
+    <h5>Youngjun Yu</h5>
     <p>IT/AI</p>
   </div>
   <div class="col text-center mb-4">

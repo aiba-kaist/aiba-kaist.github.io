@@ -15,7 +15,7 @@
       "photo": "shin.jpg"
     },
     {
-      "name_en": "Jaehyung Park",
+      "name_en": "Junhoe Park",
       "role": "PhD",
       "research_area": "IT/AI",
       "photo": "park_jaehyung.jpg"
@@ -33,7 +33,7 @@
       "photo": "kim_gaon.jpg"
     },
     {
-      "name_en": "Youngjun Yoo",
+      "name_en": "Youngjun Yu",
       "role": "PhD",
       "research_area": "IT/AI",
       "photo": "yoo_youngjun.png"
@@ -85,7 +85,7 @@
   "publications": [
     {
       "title": "Disinformation Spillover: Uncovering the Ripple Effect of Bot-Assisted Fake Social Engagement on Public Attention",
-      "authors": "Lee, Sangwook and Shin, Donghyuk and Kwon, K. Hazel and Han, Sang Pil and Lee, Suk Kyu",
+      "authors": "Lee, Sanghak and Shin, Donghyuk and Kwon, K. Hazel and Han, Sang Pil and Lee, Seok Kee",
       "venue": "MIS Quarterly",
       "year": 2024,
       "type": "journal",
@@ -94,7 +94,7 @@
     },
     {
       "title": "Learning Outside the Classroom During a Pandemic: Evidence from an Artificial Intelligence-Based Education App",
-      "authors": "Ko, Gi Yong and Shin, Donghyuk and Auh, Seigyoung and Lee, Youngju and Han, Sang Pil",
+      "authors": "Ko, Ga Young and Shin, Donghyuk and Auh, Seigyoung and Lee, Yeonjung and Han, Sang Pil",
       "venue": "Management Science",
       "year": 2023,
       "type": "journal",
@@ -112,7 +112,7 @@
     },
     {
       "title": "Enhancing Social Media Analysis with Visual Data Analytics: A Deep Learning Approach",
-      "authors": "Shin, Donghyuk and He, Sherry and Lee, Gene Moo and Whinston, Andrew B and Cetintas, Suleyman and Lee, Kuang-Chih",
+      "authors": "Shin, Donghyuk and He, Shu and Lee, Gene Moo and Whinston, Andrew B and Cetintas, Suleyman and Lee, Kuang-Chih",
       "venue": "MIS Quarterly",
       "year": 2020,
       "type": "journal",
@@ -121,7 +121,7 @@
     },
     {
       "title": "GPTs are Just GPTs: Misinterpretation of LLM Simulation in Social Science Evidenced by PLS-SEM",
-      "authors": "Kim, Seokhyun and Jeong, Jaehoon and Han, Jae Seung and Shin, Donghyuk",
+      "authors": "Kim, Sunwoong and Jeong, Jongho and Han, Jinsu and Shin, Donghyuk",
       "venue": "Workshop on Information Technologies and Systems (WITS)",
       "year": 2025,
       "type": "conference",
@@ -129,7 +129,7 @@
     },
     {
       "title": "The Cognitive Foundry: A Framework for Externalizing, Evaluating, and Sharing Mental Models in Business Education",
-      "authors": "Ahn, Taehyun and Hong, Jaehwan and Shin, Donghyuk and Auh, Seigyoung and Han, Sang Pil",
+      "authors": "Ahn, Taehyun and Hong, Juwon and Shin, Donghyuk and Auh, Seigyoung and Han, Sang Pil",
       "venue": "Workshop on Information Technologies and Systems (WITS)",
       "year": 2025,
       "type": "conference",
@@ -137,7 +137,7 @@
     },
     {
       "title": "Regulating AI-Generated Content: When Do Restrictions Spark or Stifle Community Dynamics?",
-      "authors": "Shin, Junhyuk and Lee, Suhyeon and Shin, Donghyuk",
+      "authors": "Shin, Jane and Lee, Suhyeon and Shin, Donghyuk",
       "venue": "Workshop on Information Systems and Economics (WISE)",
       "year": 2025,
       "type": "conference",
@@ -146,7 +146,7 @@
     },
     {
       "title": "PlaceSim: An LLM-based Interactive Platform for Human Behavior Simulation in Physical Facilities",
-      "authors": "Lee, Suhyeon and Yoo, Youngjun and Shin, Donghyuk and Singh, Rahul",
+      "authors": "Lee, Suhyeon and Yu, Youngjun and Shin, Donghyuk and Singh, Rahul",
       "venue": "Proceedings of the 34th ACM International Conference on Information and Knowledge Management (CIKM)",
       "year": 2025,
       "type": "conference",
@@ -155,7 +155,7 @@
     },
     {
       "title": "Unpacking the Impact of AI Coding Assistants on Software Products: Evidence from Steam Indie Games",
-      "authors": "Yoo, Youngjun and Shin, Donghyuk",
+      "authors": "Yu, Youngjun and Shin, Donghyuk",
       "venue": "Conference on Information Systems and Technology (CIST)",
       "year": 2025,
       "type": "conference",
@@ -171,7 +171,7 @@
     },
     {
       "title": "When Does Text Boost Images: An Empirical Investigation of the Dynamics of Information",
-      "authors": "Park, Jaehyung and Cho, Daegon and Shin, Donghyuk",
+      "authors": "Park, Junhoe and Cho, Daegon and Shin, Donghyuk",
       "venue": "International Conference on Information Systems (ICIS)",
       "year": 2024,
       "type": "conference",
@@ -179,7 +179,7 @@
     },
     {
       "title": "Threats or Opportunities? Enhancing Business Performance in the Era of Generative AI",
-      "authors": "Lee, Vicky and Lehmann, Johannes and Chae, Heeju and Shin, Donghyuk and Auh, Seigyoung and Han, Sang Pil",
+      "authors": "Lee, Victor and Lehmann, Julian and Chae, Heewon and Shin, Donghyuk and Auh, Seigyoung and Han, Sang Pil",
       "venue": "Academy of Management Annual Meeting (AOM)",
       "year": 2024,
       "type": "conference",

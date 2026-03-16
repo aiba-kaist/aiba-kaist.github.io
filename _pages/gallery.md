@@ -25,7 +25,11 @@ nav_order: 6
 {% endfor %}
 </div>
 
+<div class="my-5"></div>
+
 ---
+
+<div class="my-4"></div>
 
 ## Lab Life
 
@@ -63,7 +67,11 @@ nav_order: 6
   </div>
 </div>
 
+<div class="my-5"></div>
+
 ---
+
+<div class="my-4"></div>
 
 ## Lab Life
 
