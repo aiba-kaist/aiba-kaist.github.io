@@ -7,6 +7,36 @@ nav: true
 nav_order: 5
 ---
 
+{% assign teaching_data = site.data.admin_data.teaching %}
+
+{% if teaching_data %}
+
+{% assign current = teaching_data | where: "is_current", true %}
+{% assign past = teaching_data | where: "is_current", false %}
+
+## Current Courses
+
+### KAIST Graduate School of Business
+
+{% for c in current %}
+**{{ c.course_code }} - {{ c.course_name }}**
+{% if c.description %}- {{ c.description }}{% endif %}
+{% if c.topics %}- Topics: {{ c.topics }}{% endif %}
+
+{% endfor %}
+
+---
+
+## Past Courses
+
+{% for c in past %}
+- {{ c.course_name }}{% if c.semester %} ({{ c.semester }}){% endif %}
+{% endfor %}
+
+{% else %}
+
+<!-- Fallback: 기존 하드코딩 데이터 -->
+
 ## Current Courses
 
 ### KAIST Graduate School of Business
@@ -27,3 +57,4 @@ nav_order: 5
 - IT and Strategy (2023-2024)
 - Data Science for Business (2022-2023)
 
+{% endif %}

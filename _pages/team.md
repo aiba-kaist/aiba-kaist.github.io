@@ -7,6 +7,112 @@ nav: true
 nav_order: 2
 ---
 
+{% assign members_data = site.data.admin_data.members %}
+
+{% if members_data %}
+
+{% assign faculty = members_data | where: "role", "Faculty" %}
+{% assign phd = members_data | where: "role", "PhD" %}
+{% assign ms = members_data | where: "role", "MS" %}
+{% assign undergrad = members_data | where: "role", "Undergrad" %}
+{% assign alumni = members_data | where: "role", "Alumni" %}
+
+{% if faculty.size > 0 %}
+## Faculty
+
+{% for m in faculty %}
+<div class="row">
+  <div class="col-sm-3">
+    <img class="img-fluid rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}">
+  </div>
+  <div class="col-sm-9">
+    <h4>{{ m.name_en }}</h4>
+    <p><strong>{{ m.position }}</strong><br>
+    {{ m.affiliation }}<br>
+    <a href="mailto:{{ m.email }}">{{ m.email }}</a>{% if m.website %} · 
+    <a href="{{ m.website }}">Personal Website</a>{% endif %}</p>
+    <p><em>Research Interests:</em> {{ m.research_area }}</p>
+    {% if m.bio %}
+    <ul>
+      {% assign bio_lines = m.bio | split: "\n" %}
+      {% for line in bio_lines %}
+      {% if line != "" %}<li>{{ line }}</li>{% endif %}
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
+
+---
+{% endfor %}
+{% endif %}
+
+{% if phd.size > 0 %}
+## Ph.D. Students
+
+<div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
+{% for m in phd %}
+  <div class="col text-center mb-4">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:150px;height:150px;object-fit:cover;">
+    <h5>{{ m.name_en }}</h5>
+    <p>{{ m.research_area }}</p>
+  </div>
+{% endfor %}
+</div>
+
+---
+{% endif %}
+
+{% if ms.size > 0 %}
+## M.S. Students
+
+<div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
+{% for m in ms %}
+  <div class="col text-center mb-4">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:150px;height:150px;object-fit:cover;">
+    <h5>{{ m.name_en }}</h5>
+    <p>{{ m.research_area }}</p>
+  </div>
+{% endfor %}
+</div>
+
+---
+{% endif %}
+
+{% if undergrad.size > 0 %}
+## Undergraduate Researcher
+
+<div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
+{% for m in undergrad %}
+  <div class="col text-center mb-4">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:150px;height:150px;object-fit:cover;">
+    <h5>{{ m.name_en }}</h5>
+    <p>{{ m.research_area }}</p>
+  </div>
+{% endfor %}
+</div>
+
+---
+{% endif %}
+
+{% if alumni.size > 0 %}
+## Alumni
+
+<div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
+{% for m in alumni %}
+  <div class="col text-center mb-4">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:150px;height:150px;object-fit:cover;">
+    <h5>{{ m.name_en }}</h5>
+    <p>{{ m.graduation_info }}</p>
+  </div>
+{% endfor %}
+</div>
+{% endif %}
+
+{% else %}
+
+<!-- Fallback: 기존 하드코딩 데이터 -->
+
 ## Faculty
 
 <div class="row">
@@ -105,3 +211,5 @@ nav_order: 2
     <p>M.S. 2025 · PwC</p>
   </div>
 </div>
+
+{% endif %}

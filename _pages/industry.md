@@ -7,6 +7,41 @@ nav: true
 nav_order: 4
 ---
 
+{% assign industry_data = site.data.admin_data.industry %}
+
+{% if industry_data %}
+
+{% assign collaborators = industry_data | where: "type", "Collaborator" %}
+{% assign funding = industry_data | where: "type", "Funding" %}
+
+## Collaborators
+
+<div class="row row-cols-2 row-cols-md-3 g-4 mt-3">
+{% for p in collaborators %}
+  <div class="col text-center mb-4">
+    <img class="img-fluid" src="/assets/img/partners/{{ p.logo }}" alt="{{ p.name }}" style="max-height:80px;object-fit:contain;">
+    <p class="mt-2"><strong>{{ p.name }}</strong></p>
+  </div>
+{% endfor %}
+</div>
+
+---
+
+## Funding
+
+<div class="row row-cols-2 row-cols-md-3 g-4 mt-3">
+{% for p in funding %}
+  <div class="col text-center mb-4">
+    <img class="img-fluid" src="/assets/img/partners/{{ p.logo }}" alt="{{ p.name }}" style="max-height:80px;object-fit:contain;">
+    <p class="mt-2"><strong>{{ p.name }}</strong></p>
+  </div>
+{% endfor %}
+</div>
+
+{% else %}
+
+<!-- Fallback: 기존 하드코딩 데이터 -->
+
 ## Collaborators
 
 <div class="row row-cols-2 row-cols-md-3 g-4 mt-3">
@@ -50,3 +85,5 @@ nav_order: 4
     <p class="mt-2"><strong>Institute of Information & Communications Technology Planning & Evaluation (IITP)</strong></p>
   </div>
 </div>
+
+{% endif %}

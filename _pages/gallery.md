@@ -7,6 +7,41 @@ nav: true
 nav_order: 6
 ---
 
+{% assign gallery_data = site.data.admin_data.gallery %}
+
+{% if gallery_data %}
+
+{% assign conferences = gallery_data | where: "category", "Conferences" %}
+{% assign lab_life = gallery_data | where: "category", "Lab Life" %}
+
+## Conferences & Events
+
+<div class="row mt-3">
+{% for p in conferences %}
+  <div class="col-sm-6 col-md-4 mb-4">
+    <img class="img-fluid rounded" src="/assets/img/gallery/{{ p.image }}" alt="{{ p.caption }}">
+    <p class="text-center mt-2">{{ p.caption }}</p>
+  </div>
+{% endfor %}
+</div>
+
+---
+
+## Lab Life
+
+<div class="row mt-3">
+{% for p in lab_life %}
+  <div class="col-sm-6 col-md-4 mb-4">
+    <img class="img-fluid rounded" src="/assets/img/gallery/{{ p.image }}" alt="{{ p.caption }}">
+    <p class="text-center mt-2">{{ p.caption }}</p>
+  </div>
+{% endfor %}
+</div>
+
+{% else %}
+
+<!-- Fallback: 기존 하드코딩 데이터 -->
+
 ## Conferences & Events
 
 <div class="row mt-3">
@@ -46,3 +81,5 @@ nav_order: 6
     <p class="text-center mt-2">Lab Team Photo</p>
   </div>
 </div>
+
+{% endif %}
