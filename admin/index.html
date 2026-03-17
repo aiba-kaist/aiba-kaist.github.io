@@ -148,6 +148,7 @@
     <div class="tabs">
       <button class="active" onclick="showTab('members')">Members</button>
       <button onclick="showTab('publications')">Publications</button>
+      <button onclick="showTab('news')">News</button>
       <button onclick="showTab('teaching')">Teaching</button>
       <button onclick="showTab('industry')">Industry</button>
       <button onclick="showTab('gallery')">Gallery</button>
@@ -162,6 +163,15 @@
         <button class="add-btn" onclick="addItem('members')">+ 추가</button>
       </div>
       <div id="membersList" class="items"></div>
+    </div>
+
+    <!-- News -->
+    <div id="news" class="section">
+      <div class="section-header">
+        <h2>News</h2>
+        <button class="add-btn" onclick="addItem('news')">+ 추가</button>
+      </div>
+      <div id="newsList" class="items"></div>
     </div>
 
     <!-- Publications -->
@@ -217,7 +227,7 @@
 <script>
 const PASSWORD = '1234';
 const REPO = 'aiba-kaist/aiba-kaist.github.io';
-let data = { members: [], publications: [], teaching: [], industry: [], gallery: [] };
+let data = { members: [], publications: [], teaching: [], industry: [], gallery: [], news: [] };
 let draggedItem = null;
 let draggedType = null;
 
@@ -568,12 +578,39 @@ function renderGallery() {
   `).join('');
 }
 
-function renderAll() { renderMembers(); renderPublications(); renderTeaching(); renderIndustry(); renderGallery(); }
+function renderNews() {
+  const c = document.getElementById('newsList');
+  if (!data.news.length) { c.innerHTML = '<div class="empty"><div class="empty-icon">📰</div>뉴스가 없습니다</div>'; return; }
+  c.innerHTML = data.news.map((n, i) => `
+    <div class="item" draggable="true" ondragstart="handleDragStart(event,'news',${i})" ondragend="handleDragEnd(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,'news',${i})">
+      <div class="item-main">
+        <span class="drag-handle">⋮⋮</span>
+        <div class="item-info">
+          <div class="item-title">${n.content || '내용 없음'}</div>
+          <div class="item-sub">${n.date || ''}</div>
+        </div>
+        <div class="item-actions">
+          <button onclick="toggleEdit(this)">수정</button>
+          <button class="delete" onclick="deleteItem('news',${i})">삭제</button>
+        </div>
+      </div>
+      <div class="item-edit">
+        <div class="form-grid">
+          <div class="form-row"><label>날짜</label><input type="date" value="${n.date||''}" onchange="data.news[${i}].date=this.value"></div>
+          <div class="form-row"><label>내용</label><input value="${n.content||''}" onchange="data.news[${i}].content=this.value"></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderAll() { renderMembers(); renderPublications(); renderNews(); renderTeaching(); renderIndustry(); renderGallery(); }
 
 function addItem(type) {
   const defaults = {
     members: { role: 'PhD' },
     publications: { type: 'conference', year: new Date().getFullYear() },
+    news: { date: new Date().toISOString().split('T')[0], content: '' },
     teaching: { is_current: true },
     industry: { type: 'Collaborator' },
     gallery: { category: 'Lab Life' }
@@ -594,6 +631,7 @@ async function loadData() {
       const d = await res.json();
       data.members = d.members || [];
       data.publications = d.publications || [];
+      data.news = d.news || [];
       data.teaching = d.teaching || [];
       data.industry = d.industry || [];
       data.gallery = d.gallery || [];
