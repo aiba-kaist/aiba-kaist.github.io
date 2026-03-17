@@ -39,10 +39,11 @@
       "photo": "yoo_youngjun.png"
     },
     {
-      "name_en": "Taehyun Ahn",
+      "name_en": "Taehyeon An",
       "role": "PhD",
       "research_area": "AI Agent",
-      "photo": "ahn_taehyun.png"
+      "photo": "ahn_taehyun.png",
+      "email": "taeohy@kaist.ac.kr"
     },
     {
       "name_en": "Seohyun Kim",
