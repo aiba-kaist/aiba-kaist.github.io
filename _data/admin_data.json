@@ -1,13 +1,6 @@
 {
   "members": [
     {
-      "role": "PhD",
-      "name_en": "test",
-      "photo": "test.jpg",
-      "research_area": "test",
-      "email": "test@gmail.com"
-    },
-    {
       "name_en": "Donghyuk Shin",
       "role": "Faculty",
       "position": "Associate Professor",
@@ -32,6 +25,13 @@
       "role": "PhD",
       "research_area": "Generative AI",
       "photo": "baek_junha.png"
+    },
+    {
+      "role": "PhD",
+      "name_en": "test",
+      "photo": "test.jpg",
+      "research_area": "test",
+      "email": "test@gmail.com"
     },
     {
       "name_en": "Gaon Kim",
