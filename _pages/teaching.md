@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Courses taught by AIBA Lab
+description: Courses taught by Prof. Donghyuk Shin
 nav: true
 nav_order: 5
 ---
@@ -19,8 +19,7 @@ nav_order: 5
 ### KAIST Graduate School of Business
 
 {% for c in current %}
-**{{ c.course_code }} - {{ c.course_name }}**
-{% if c.description %}- {{ c.description }}{% endif %}
+#### {{ c.course_code }} - {{ c.course_name }}
 {% if c.topics %}- Topics: {{ c.topics }}{% endif %}
 
 {% endfor %}
