@@ -320,6 +320,12 @@
       "logo": "iitp.jpg"
     }
   ],
+  "news": [
+    {
+      "date": "2026-03-16",
+      "content": "Welcome to AIBA Lab's new website! 🎉"
+    }
+  ],
   "gallery": [
     {
       "image": "cist.png",
