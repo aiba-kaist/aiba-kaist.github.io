@@ -39,6 +39,13 @@
       "photo": "yoo_youngjun.png"
     },
     {
+      "role": "PhD",
+      "name_en": "test",
+      "photo": "aiba_lab_logo.png",
+      "research_area": "test",
+      "email": "test"
+    },
+    {
       "name_en": "Taehyun Ahn",
       "role": "PhD",
       "research_area": "AI Agent",
