@@ -7,10 +7,12 @@ on:
       - main
     paths:
       - "assets/**"
+      - "_data/**"
       - "_sass/**"
       - "_scripts/**"
       - "**.bib"
       - "**.html"
+      - "**.json"
       - "**.js"
       - "**.liquid"
       - "**/*.md"
@@ -36,10 +38,12 @@ on:
       - main
     paths:
       - "assets/**"
+      - "_data/**"
       - "_sass/**"
       - "_scripts/**"
       - "**.bib"
       - "**.html"
+      - "**.json"
       - "**.js"
       - "**.liquid"
       - "**/*.md"
