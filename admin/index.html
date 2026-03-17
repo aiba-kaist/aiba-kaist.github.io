@@ -363,7 +363,12 @@ async function uploadImage(file, folder) {
   const token = localStorage.getItem('ghToken');
   if (!token) { alert('토큰이 필요합니다'); return null; }
   showStatus('업로드 중...', 'loading');
-  const name = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').toLowerCase();
+  // 파일명 안전하게 생성: 영문/숫자만 남기고, 한글 등은 타임스탬프로 대체
+  let baseName = file.name.replace(/\.[^/.]+$/, ''); // 확장자 제거
+  const ext = file.name.split('.').pop().toLowerCase();
+  const safeName = baseName.replace(/[^a-zA-Z0-9_-]/g, '').toLowerCase();
+  // 파일명이 너무 짧거나 이상하면 타임스탬프 사용
+  const name = (safeName.length >= 3) ? `${safeName}.${ext}` : `img_${Date.now()}.${ext}`;
   const path = `assets/img/${folder}/${name}`;
   const base64 = await new Promise(r => { const fr = new FileReader(); fr.onload = () => r(fr.result.split(',')[1]); fr.readAsDataURL(file); });
   try {

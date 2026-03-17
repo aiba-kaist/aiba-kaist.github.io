@@ -70,7 +70,7 @@ nav_order: 2
 <div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
 {% for m in phd %}
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>{{ m.name_en }}</h5>
     <p>{{ m.research_area }}</p>
   </div>
@@ -86,7 +86,7 @@ nav_order: 2
 <div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
 {% for m in ms %}
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>{{ m.name_en }}</h5>
     <p>{{ m.research_area }}</p>
   </div>
@@ -102,7 +102,7 @@ nav_order: 2
 <div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
 {% for m in undergrad %}
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>{{ m.name_en }}</h5>
     <p>{{ m.research_area }}</p>
   </div>
@@ -118,7 +118,7 @@ nav_order: 2
 <div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
 {% for m in alumni %}
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>{{ m.name_en }}</h5>
     <p>{{ m.graduation_info }}</p>
   </div>
@@ -167,37 +167,37 @@ nav_order: 2
 
 <div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/park_jaehyung.jpg" alt="Junhoe Park" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/park_jaehyung.jpg" alt="Junhoe Park" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>Junhoe Park</h5>
     <p>IT/AI</p>
   </div>
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/baek_junha.png" alt="Junha Baek" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/baek_junha.png" alt="Junha Baek" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>Junha Baek</h5>
     <p>Generative AI</p>
   </div>
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/kim_gaon.jpg" alt="Gaon Kim" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/kim_gaon.jpg" alt="Gaon Kim" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>Gaon Kim</h5>
     <p>Financial AI</p>
   </div>
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/yoo_youngjun.png" alt="Youngjun Yu" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/yoo_youngjun.png" alt="Youngjun Yu" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>Youngjun Yu</h5>
     <p>IT/AI</p>
   </div>
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/ahn_taehyun.png" alt="Taehyun Ahn" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/ahn_taehyun.png" alt="Taehyun Ahn" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>Taehyun Ahn</h5>
     <p>AI Agent</p>
   </div>
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/kim_seohyun.png" alt="Seohyun Kim" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/kim_seohyun.png" alt="Seohyun Kim" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>Seohyun Kim</h5>
     <p>Healthcare AI</p>
   </div>
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/lee_suhyeon.png" alt="Suhyeon Lee" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/lee_suhyeon.png" alt="Suhyeon Lee" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>Suhyeon Lee</h5>
     <p>LLM</p>
   </div>
@@ -209,7 +209,7 @@ nav_order: 2
 
 <div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/park_woohyun.png" alt="Woohyun Park" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/park_woohyun.png" alt="Woohyun Park" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>Woohyun Park</h5>
     <p>Platform</p>
   </div>
@@ -221,7 +221,7 @@ nav_order: 2
 
 <div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/seo_yeonwoo.jpg" alt="Yeonwoo Seo" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/seo_yeonwoo.jpg" alt="Yeonwoo Seo" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>Yeonwoo Seo</h5>
     <p>Causal ML</p>
   </div>
@@ -233,7 +233,7 @@ nav_order: 2
 
 <div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
   <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/yoo_woojeong.png" alt="Woojeong Yoo" style="width:100px;height:100px;object-fit:cover;">
+    <img class="img-fluid rounded mb-2" src="/assets/img/members/yoo_woojeong.png" alt="Woojeong Yoo" style="width:100px;height:100px;object-fit:cover;object-position:top;">
     <h5>Woojeong Yoo</h5>
     <p>M.S. 2025 · PwC</p>
   </div>
