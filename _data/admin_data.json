@@ -27,13 +27,6 @@
       "photo": "baek_junha.png"
     },
     {
-      "role": "PhD",
-      "name_en": "test",
-      "photo": "test.jpg",
-      "research_area": "test",
-      "email": "test@gmail.com"
-    },
-    {
       "name_en": "Gaon Kim",
       "role": "PhD",
       "research_area": "Financial AI",
