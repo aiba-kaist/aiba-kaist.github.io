@@ -67,12 +67,12 @@ nav_order: 2
 {% if phd.size > 0 %}
 ## Ph.D. Students
 
-<div class="row row-cols-2 row-cols-md-5 g-4 mt-3">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
 {% for m in phd %}
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>{{ m.name_en }}</h5>
-    <p>{{ m.research_area }}</p>
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">{{ m.name_en }}</h5>
+    <p style="color:#6c757d;margin:0;">{{ m.research_area }}</p>
   </div>
 {% endfor %}
 </div>
@@ -83,12 +83,12 @@ nav_order: 2
 {% if ms.size > 0 %}
 ## M.S. Students
 
-<div class="row row-cols-2 row-cols-md-5 g-4 mt-3">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
 {% for m in ms %}
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>{{ m.name_en }}</h5>
-    <p>{{ m.research_area }}</p>
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">{{ m.name_en }}</h5>
+    <p style="color:#6c757d;margin:0;">{{ m.research_area }}</p>
   </div>
 {% endfor %}
 </div>
@@ -99,12 +99,12 @@ nav_order: 2
 {% if undergrad.size > 0 %}
 ## Undergraduate Researcher
 
-<div class="row row-cols-2 row-cols-md-5 g-4 mt-3">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
 {% for m in undergrad %}
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>{{ m.name_en }}</h5>
-    <p>{{ m.research_area }}</p>
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">{{ m.name_en }}</h5>
+    <p style="color:#6c757d;margin:0;">{{ m.research_area }}</p>
   </div>
 {% endfor %}
 </div>
@@ -115,12 +115,12 @@ nav_order: 2
 {% if alumni.size > 0 %}
 ## Alumni
 
-<div class="row row-cols-2 row-cols-md-5 g-4 mt-3">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
 {% for m in alumni %}
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>{{ m.name_en }}</h5>
-    <p>{{ m.graduation_info }}</p>
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">{{ m.name_en }}</h5>
+    <p style="color:#6c757d;margin:0;">{{ m.graduation_info }}</p>
   </div>
 {% endfor %}
 </div>
@@ -165,41 +165,41 @@ nav_order: 2
 
 ## Ph.D. Students
 
-<div class="row row-cols-2 row-cols-md-5 g-4 mt-3">
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/park_jaehyung.jpg" alt="Junhoe Park" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>Junhoe Park</h5>
-    <p>IT/AI</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/park_jaehyung.jpg" alt="Junhoe Park" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Junhoe Park</h5>
+    <p style="color:#6c757d;margin:0;">IT/AI</p>
   </div>
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/baek_junha.png" alt="Junha Baek" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>Junha Baek</h5>
-    <p>Generative AI</p>
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/baek_junha.png" alt="Junha Baek" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Junha Baek</h5>
+    <p style="color:#6c757d;margin:0;">Generative AI</p>
   </div>
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/kim_gaon.jpg" alt="Gaon Kim" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>Gaon Kim</h5>
-    <p>Financial AI</p>
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/kim_gaon.jpg" alt="Gaon Kim" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Gaon Kim</h5>
+    <p style="color:#6c757d;margin:0;">Financial AI</p>
   </div>
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/yoo_youngjun.png" alt="Youngjun Yu" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>Youngjun Yu</h5>
-    <p>IT/AI</p>
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/yoo_youngjun.png" alt="Youngjun Yu" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Youngjun Yu</h5>
+    <p style="color:#6c757d;margin:0;">IT/AI</p>
   </div>
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/ahn_taehyun.png" alt="Taehyun Ahn" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>Taehyun Ahn</h5>
-    <p>AI Agent</p>
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/ahn_taehyun.png" alt="Taehyun Ahn" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Taehyun Ahn</h5>
+    <p style="color:#6c757d;margin:0;">AI Agent</p>
   </div>
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/kim_seohyun.png" alt="Seohyun Kim" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>Seohyun Kim</h5>
-    <p>Healthcare AI</p>
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/kim_seohyun.png" alt="Seohyun Kim" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Seohyun Kim</h5>
+    <p style="color:#6c757d;margin:0;">Healthcare AI</p>
   </div>
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/lee_suhyeon.png" alt="Suhyeon Lee" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>Suhyeon Lee</h5>
-    <p>LLM</p>
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/lee_suhyeon.png" alt="Suhyeon Lee" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Suhyeon Lee</h5>
+    <p style="color:#6c757d;margin:0;">LLM</p>
   </div>
 </div>
 
@@ -207,11 +207,11 @@ nav_order: 2
 
 ## M.S. Students
 
-<div class="row row-cols-2 row-cols-md-5 g-4 mt-3">
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/park_woohyun.png" alt="Woohyun Park" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>Woohyun Park</h5>
-    <p>Platform</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/park_woohyun.png" alt="Woohyun Park" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Woohyun Park</h5>
+    <p style="color:#6c757d;margin:0;">Platform</p>
   </div>
 </div>
 
@@ -219,11 +219,11 @@ nav_order: 2
 
 ## Undergraduate Researcher
 
-<div class="row row-cols-2 row-cols-md-5 g-4 mt-3">
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/seo_yeonwoo.jpg" alt="Yeonwoo Seo" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>Yeonwoo Seo</h5>
-    <p>Causal ML</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/seo_yeonwoo.jpg" alt="Yeonwoo Seo" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Yeonwoo Seo</h5>
+    <p style="color:#6c757d;margin:0;">Causal ML</p>
   </div>
 </div>
 
@@ -231,11 +231,11 @@ nav_order: 2
 
 ## Alumni
 
-<div class="row row-cols-2 row-cols-md-5 g-4 mt-3">
-  <div class="col text-center mb-4">
-    <img class="img-fluid rounded mb-2" src="/assets/img/members/yoo_woojeong.png" alt="Woojeong Yoo" style="width:130px;height:130px;object-fit:cover;object-position:top;">
-    <h5>Woojeong Yoo</h5>
-    <p>M.S. 2025 · PwC</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
+  <div style="text-align:center;">
+    <img class="rounded" src="/assets/img/members/yoo_woojeong.png" alt="Woojeong Yoo" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Woojeong Yoo</h5>
+    <p style="color:#6c757d;margin:0;">M.S. 2025 · PwC</p>
   </div>
 </div>
 

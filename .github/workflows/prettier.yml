@@ -1,14 +1,17 @@
 name: Prettier code formatter
 
+# Disabled to allow Admin panel commits
+# on:
+#   pull_request:
+#     branches:
+#       - master
+#       - main
+#   push:
+#     branches:
+#       - master
+#       - main
 on:
-  pull_request:
-    branches:
-      - master
-      - main
-  push:
-    branches:
-      - master
-      - main
+  workflow_dispatch:  # Manual trigger only
 
 jobs:
   check:
