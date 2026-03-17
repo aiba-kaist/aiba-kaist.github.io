@@ -39,13 +39,6 @@
       "photo": "yoo_youngjun.png"
     },
     {
-      "role": "PhD",
-      "name_en": "test",
-      "photo": "aiba_lab_logo.png",
-      "research_area": "test",
-      "email": "test"
-    },
-    {
       "name_en": "Taehyun Ahn",
       "role": "PhD",
       "research_area": "AI Agent",
@@ -320,12 +313,6 @@
       "logo": "iitp.jpg"
     }
   ],
-  "news": [
-    {
-      "date": "2026-03-16",
-      "content": "Welcome to AIBA Lab's new website! 🎉"
-    }
-  ],
   "gallery": [
     {
       "image": "cist.png",
@@ -361,6 +348,12 @@
       "image": "lab-team.jpg",
       "caption": "단체티 제작",
       "category": "Lab Life"
+    }
+  ],
+  "news": [
+    {
+      "date": "2026-03-16",
+      "content": "Welcome to AIBA Lab's new website! 🎉"
     }
   ]
 }
