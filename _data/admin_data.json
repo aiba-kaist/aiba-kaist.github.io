@@ -240,16 +240,17 @@
   ],
   "teaching": [
     {
-      "course_code": "MGT 562",
-      "course_name": "Business Analytics",
-      "description": "Graduate level course on data analytics for business decision-making",
+      "course_code": "BME.89909",
+      "course_name": "Machine Learning for Business Data Analysis II",
+      "description": "",
       "topics": "Machine Learning, Deep Learning, NLP, Causal Inference",
-      "is_current": true
+      "is_current": true,
+      "semester": "Spring 2024, Fall 2025"
     },
     {
-      "course_code": "MGT 565",
-      "course_name": "IT and Strategy",
-      "description": "Graduate level course on strategic implications of IT",
+      "course_code": "BIZ.60081",
+      "course_name": "Artificial Intelligence for Business Applications",
+      "description": "",
       "topics": "Platform Economics, AI/IT Economics, Digital Transformation",
       "is_current": true
     },
