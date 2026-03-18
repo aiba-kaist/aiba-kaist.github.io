@@ -261,7 +261,7 @@
     {
       "name": "QANDA",
       "type": "Collaborator",
-      "logo": "qanda.jpg"
+      "logo": "qanda_newlogo3.png"
     },
     {
       "name": "Baemin",
@@ -274,9 +274,9 @@
       "logo": "hankook.png"
     },
     {
-      "name": "HTbeyond",
+      "name": "Social Solidarity Bank",
       "type": "Collaborator",
-      "logo": "htbeyond.png"
+      "logo": "ssb.png"
     },
     {
       "name": "ClassU",
@@ -284,9 +284,14 @@
       "logo": "classu.png"
     },
     {
-      "name": "Social Solidarity Bank",
+      "name": "HTbeyond",
       "type": "Collaborator",
-      "logo": "ssb.png"
+      "logo": "htbeyond.png"
+    },
+    {
+      "type": "Collaborator",
+      "name": "indid.lab",
+      "logo": "akr20220926044100003_01_i_p4.jpg"
     },
     {
       "name": "National Research Foundation of Korea (NRF)",
