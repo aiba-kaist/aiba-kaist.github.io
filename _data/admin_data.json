@@ -27,7 +27,7 @@
       "photo": "baek_junha.png"
     },
     {
-      "name_en": "Gaon King",
+      "name_en": "Gaon Kim",
       "role": "PhD",
       "research_area": "Financial AI",
       "photo": "kim_gaon.jpg",
@@ -43,7 +43,7 @@
       "name_en": "Taehyeon An",
       "role": "PhD",
       "research_area": "AI Agent",
-      "photo": "img_1773816949398.jpg",
+      "photo": "ahn_taehyun.png",
       "email": "taeohy@kaist.ac.kr"
     },
     {
@@ -258,6 +258,11 @@
     }
   ],
   "industry": [
+    {
+      "type": "Collaborator",
+      "logo": "datarize.jpg",
+      "name": "Datarize"
+    },
     {
       "name": "QANDA",
       "type": "Collaborator",
