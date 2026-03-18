@@ -117,7 +117,7 @@
     },
     {
       "title": "GPTs are Just GPTs: Misinterpretation of LLM Simulation in Social Science Evidenced by PLS-SEM",
-      "authors": "Kim, Sunwoong and Jeong, Jongho and Han, Jinsu and Shin, Donghyuk",
+      "authors": "Kim, Sunwoong and Jeong, Jongho and Han, Jin Soo and Shin, Donghyuk",
       "venue": "Workshop on Information Technologies and Systems (WITS)",
       "year": 2025,
       "type": "conference",
@@ -142,7 +142,7 @@
     },
     {
       "title": "PlaceSim: An LLM-based Interactive Platform for Human Behavior Simulation in Physical Facilities",
-      "authors": "Lee, Suhyeon and Yu, Youngjun and Shin, Donghyuk and Singh, Rahul",
+      "authors": "Lee, Suhyeon and Yu, Youngjun and Shin, Donghyuk and Singh, Rita",
       "venue": "Proceedings of the 34th ACM International Conference on Information and Knowledge Management (CIKM)",
       "year": 2025,
       "type": "conference",
@@ -159,7 +159,7 @@
     },
     {
       "title": "LLM-Mirror: A Generated-Persona Approach for Survey Pre-Testing",
-      "authors": "Kim, Seokhyun and Jeong, Jaehoon and Han, Jae Seung and Shin, Donghyuk",
+      "authors": "Kim, Sunwoong and Jeong, Jongho and Han, Jin Soo and Shin, Donghyuk",
       "venue": "AAAI Conference on Artificial Intelligence—Workshop on Economics of Modern ML",
       "year": 2025,
       "type": "conference",
@@ -167,7 +167,7 @@
     },
     {
       "title": "When Does Text Boost Images: An Empirical Investigation of the Dynamics of Information",
-      "authors": "Park, Junhoe and Cho, Daegon and Shin, Donghyuk",
+      "authors": "Park, Joonhwae and Cho, Daegon and Shin, Donghyuk",
       "venue": "International Conference on Information Systems (ICIS)",
       "year": 2024,
       "type": "conference",
@@ -184,7 +184,7 @@
     },
     {
       "title": "Battle of the AIs: The Impact of Generative Language Models on AI Services",
-      "authors": "Lee, Sang Jun and Shin, Donghyuk and Han, Sang Pil",
+      "authors": "Lee, Seung Jong and Shin, Donghyuk and Han, Sang Pil",
       "venue": "Conference on Information Systems and Technology (CIST)",
       "year": 2023,
       "type": "conference",
@@ -193,15 +193,15 @@
     },
     {
       "title": "Graph Representation Learning for Reciprocal Recommendation in IT-enabled Social Networks",
-      "authors": "Kim, Byungkyu and Lee, Kanghyun and Shin, Donghyuk and Han, Sang Pil and Ram, Sudha",
+      "authors": "Kim, Buomsoo and Lee, Kyuhan and Shin, Donghyuk and Han, Sang Pil and Ram, Sudha",
       "venue": "Workshop on Information Technologies and Systems (WITS)",
       "year": 2022,
       "type": "conference",
       "abbr": "WITS"
     },
     {
-      "title": "Achieving the Double Bottom Line with Artificial Intelligence by Addressing Inequity",
-      "authors": "Jeong, Daewon and Shin, Donghyuk and Auh, Seigyoung and Han, Sang Pil",
+      "title": "Achieving the Double Bottom Line with Artificial Intelligence by Addressing Inequity: A Global Comparative Analysis of an Educational Technology Firm",
+      "authors": "Jeong, Dahae and Shin, Donghyuk and Auh, Seigyoung and Han, Sang Pil",
       "venue": "International Conference on Information Systems (ICIS)",
       "year": 2022,
       "type": "conference",
