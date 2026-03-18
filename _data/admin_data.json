@@ -259,34 +259,24 @@
   ],
   "industry": [
     {
-      "type": "Collaborator",
-      "logo": "datarize.jpg",
-      "name": "Datarize"
-    },
-    {
-      "name": "QANDA",
-      "type": "Collaborator",
-      "logo": "qanda.jpg"
-    },
-    {
       "name": "Baemin",
       "type": "Collaborator",
       "logo": "baemin.jpg"
     },
     {
-      "name": "Hankook Tire",
-      "type": "Collaborator",
-      "logo": "hankook.png"
-    },
-    {
-      "name": "Social Solidarity Bank",
-      "type": "Collaborator",
-      "logo": "ssb.png"
-    },
-    {
       "name": "ClassU",
       "type": "Collaborator",
       "logo": "classu.png"
+    },
+    {
+      "type": "Collaborator",
+      "logo": "datarize.jpg",
+      "name": "Datarize"
+    },
+    {
+      "name": "Hankook Tire",
+      "type": "Collaborator",
+      "logo": "hankook.png"
     },
     {
       "name": "HTbeyond",
@@ -297,6 +287,16 @@
       "type": "Collaborator",
       "name": "indid.lab",
       "logo": "akr20220926044100003_01_i_p4.jpg"
+    },
+    {
+      "name": "QANDA",
+      "type": "Collaborator",
+      "logo": "qanda.jpg"
+    },
+    {
+      "name": "Social Solidarity Bank",
+      "type": "Collaborator",
+      "logo": "ssb.png"
     },
     {
       "name": "National Research Foundation of Korea (NRF)",
