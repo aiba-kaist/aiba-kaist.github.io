@@ -27,9 +27,12 @@ nav_order: 2
   </div>
   <div class="col-sm-9">
     <h4>{{ m.name_en }}</h4>
-    <p><strong>{{ m.position }}</strong><br>
-    {{ m.affiliation }}<br>
-    <a href="mailto:{{ m.email }}">{{ m.email }}</a>{% if m.website %} · <a href="{{ m.website }}">Personal Website</a>{% endif %}</p>
+    <p>{{ m.position }}<br>
+    {{ m.affiliation }}<br></p>
+    
+    <p><strong>Email:</strong> {{ m.email }}</p>
+    <p><strong>Office:</strong> {{ m.office }}</p>
+    <p><strong>Tel:</strong> {{ m.phone }}</p>
     
     {% if m.bio %}
     {% assign bio_paragraphs = m.bio | split: "\n\n" %}
@@ -37,26 +40,22 @@ nav_order: 2
     <p style="text-align:justify;">{{ para }}</p>
     {% endfor %}
     {% endif %}
-    
-    <p><strong>Research Areas:</strong> {{ m.research_area }}</p>
-    
-    {% if m.education %}
-    <p><strong>Education:</strong> {{ m.education }}</p>
-    {% endif %}
-    
-    {% if m.career %}
-    <p><strong>Career:</strong></p>
-    <ul>
-      {% assign career_lines = m.career | split: "|" %}
-      {% for line in career_lines %}
-      {% if line != "" %}<li>{{ line }}</li>{% endif %}
-      {% endfor %}
-    </ul>
-    {% endif %}
-    
-    {% if m.advisory %}
-    <p><strong>Industry Advisory:</strong> {{ m.advisory }}</p>
-    {% endif %}
+  </div>
+
+  <div class="col-sm-auto">
+  {% if m.education %}
+  <p><strong>Education:</strong> {{ m.education }}</p>
+  {% endif %}
+  
+  {% if m.career %}
+  <strong>Experience:</strong>
+  <ul>
+    {% assign career_lines = m.career | split: "|" %}
+    {% for line in career_lines %}
+    {% if line != "" %}<li>{{ line }}</li>{% endif %}
+    {% endfor %}
+  </ul>
+  {% endif %}
   </div>
 </div>
 {% endfor %}

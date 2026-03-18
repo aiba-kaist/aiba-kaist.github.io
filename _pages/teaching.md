@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Courses taught by Prof. Donghyuk Shin
+description: Courses taught by Prof. Shin
 nav: true
 nav_order: 5
 ---
@@ -16,10 +16,10 @@ nav_order: 5
 
 ## Current Courses
 
-### KAIST Graduate School of Business
+### KAIST
 
 {% for c in current %}
-#### {{ c.course_code }} - {{ c.course_name }}
+#### {{ c.course_code }}: {{ c.course_name }}
 {% if c.topics %}- Topics: {{ c.topics }}{% endif %}
 
 {% endfor %}
