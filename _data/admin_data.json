@@ -255,24 +255,6 @@
       "description": "",
       "topics": "Platform Economics, AI/IT Economics, Digital Transformation",
       "is_current": true
-    },
-    {
-      "course_code": "",
-      "course_name": "Business Analytics",
-      "semester": "2023-2024",
-      "is_current": false
-    },
-    {
-      "course_code": "",
-      "course_name": "IT and Strategy",
-      "semester": "2023-2024",
-      "is_current": false
-    },
-    {
-      "course_code": "",
-      "course_name": "Data Science for Business",
-      "semester": "2022-2023",
-      "is_current": false
     }
   ],
   "industry": [
