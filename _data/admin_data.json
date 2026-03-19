@@ -84,7 +84,6 @@
       "year": 2024,
       "type": "journal",
       "abbr": "MISQ",
-      "selected": true,
       "doi": ""
     },
     {
@@ -93,8 +92,7 @@
       "venue": "Management Science",
       "year": 2023,
       "type": "journal",
-      "abbr": "MS",
-      "selected": true
+      "abbr": "MS"
     },
     {
       "title": "Predicting Firm Market Performance using the Social Media Promoter Score",
@@ -102,8 +100,7 @@
       "venue": "Marketing Letters",
       "year": 2022,
       "type": "journal",
-      "abbr": "ML",
-      "selected": true
+      "abbr": "ML"
     },
     {
       "title": "Enhancing Social Media Analysis with Visual Data Analytics: A Deep Learning Approach",
@@ -111,8 +108,7 @@
       "venue": "MIS Quarterly",
       "year": 2020,
       "type": "journal",
-      "abbr": "MISQ",
-      "selected": true
+      "abbr": "MISQ"
     },
     {
       "title": "GPTs are Just GPTs: Misinterpretation of LLM Simulation in Social Science Evidenced by PLS-SEM",
@@ -145,8 +141,7 @@
       "venue": "Proceedings of the 34th ACM International Conference on Information and Knowledge Management (CIKM)",
       "year": 2025,
       "type": "conference",
-      "abbr": "CIKM",
-      "selected": true
+      "abbr": "CIKM"
     },
     {
       "title": "Unpacking the Impact of AI Coding Assistants on Software Products: Evidence from Steam Indie Games",
