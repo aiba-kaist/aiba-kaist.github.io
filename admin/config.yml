@@ -157,6 +157,6 @@ collections:
           - { name: "permalink", label: "Permalink", widget: "hidden", default: "/" }
           - { name: "subtitle", label: "Subtitle", widget: "string" }
           - { name: "profile", label: "Profile", widget: "hidden", default: false }
-          - { name: "selected_papers", label: "Show Selected Papers", widget: "boolean", default: true }
+          - { name: "selected_papers", label: "Show Selected Papers", widget: "boolean", default: false }
           - { name: "social", label: "Show Social Links", widget: "boolean", default: false }
           - { name: "body", label: "Content", widget: "markdown" }

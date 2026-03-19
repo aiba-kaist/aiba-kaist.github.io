@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-teaching",
           title: "teaching",
-          description: "Courses taught by Prof. Donghyuk Shin",
+          description: "Courses taught by Prof. Shin",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
