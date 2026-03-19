@@ -17,9 +17,10 @@ nav_order: 5
 ## Current Courses
 
 ### KAIST
+(All courses are graduate-level unless otherwise noted.)
 
 {% for c in current %}
-#### {{ c.course_code }}: {{ c.course_name }}
+##### [{{ c.course_code }}] {{ c.course_name }}
 {% if c.topics %}- Topics: {{ c.topics }}{% endif %}
 
 {% endfor %}
