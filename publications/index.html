@@ -7,12 +7,36 @@ function filterByAuthor() {
   document.getElementById('authorFilter').style.display = 'block';
   document.getElementById('authorName').textContent = author;
   
-  document.querySelectorAll('.bibliography li').forEach(li => {
-    const authorText = li.querySelector('.author')?.textContent?.toLowerCase() || '';
-    if (!authorText.includes(author.toLowerCase())) {
+  const authorLower = author.toLowerCase();
+  let found = 0;
+  
+  // Try multiple selectors for bibliography items
+  const items = document.querySelectorAll('.bibliography li, .publications li, [class*="bib"] li');
+  
+  items.forEach(li => {
+    // Try multiple ways to find author text
+    let authorText = '';
+    
+    // Method 1: .author class
+    const authorEl = li.querySelector('.author, .authors, [class*="author"]');
+    if (authorEl) authorText = authorEl.textContent;
+    
+    // Method 2: Full text of the item
+    if (!authorText) authorText = li.textContent;
+    
+    authorText = authorText.toLowerCase();
+    
+    if (!authorText.includes(authorLower)) {
       li.style.display = 'none';
+    } else {
+      found++;
     }
   });
+  
+  // If no items found, show message
+  if (found === 0) {
+    document.getElementById('authorName').textContent = author + ' (no publications found)';
+  }
 }
 
 function clearFilter() {
