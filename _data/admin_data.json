@@ -320,6 +320,11 @@
       "logo": "ssb.png"
     },
     {
+      "type": "Collaborator",
+      "logo": "tesser.png",
+      "name": "Tesser"
+    },
+    {
       "name": "National Research Foundation of Korea (NRF)",
       "type": "Funding",
       "logo": "nrf.png"
