@@ -91,7 +91,7 @@ nav_order: 2
   </div>
   <div class="col">
     <h5 style="margin-bottom:0.25rem;"><a href="/publications/?author={{ last_name }}" style="color:inherit;text-decoration:none;">{{ m.name_en }}</a></h5>
-    {% if m.research_area.size > 0 %}<p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>{% endif %}
+    {% if m.research_area.size > 0 %}<p style="margin:0.15rem 0;color:#495057;">{{ m.research_area }}</p>{% endif %}
     {% if m.start_year and m.start_year > 0 %}<p style="margin:0.15rem 0;color:#6c757d;">{{ year_str }}</p>{% endif %}
     {% assign has_contact = false %}
     {% if m.email.size > 0 %}{% assign has_contact = true %}{% endif %}
@@ -130,7 +130,7 @@ nav_order: 2
   </div>
   <div class="col">
     <h5 style="margin-bottom:0.25rem;"><a href="/publications/?author={{ last_name }}" style="color:inherit;text-decoration:none;">{{ m.name_en }}</a></h5>
-    {% if m.research_area.size > 0 %}<p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>{% endif %}
+    {% if m.research_area.size > 0 %}<p style="margin:0.15rem 0;color:#495057;">{{ m.research_area }}</p>{% endif %}
     {% if m.start_year and m.start_year > 0 %}<p style="margin:0.15rem 0;color:#6c757d;">{{ year_str }}</p>{% endif %}
     {% assign has_contact = false %}
     {% if m.email.size > 0 %}{% assign has_contact = true %}{% endif %}
@@ -163,7 +163,7 @@ nav_order: 2
   </div>
   <div class="col">
     <h5 style="margin-bottom:0.25rem;"><a href="/publications/?author={{ last_name }}" style="color:inherit;text-decoration:none;">{{ m.name_en }}</a></h5>
-    {% if m.research_area.size > 0 %}<p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>{% endif %}
+    {% if m.research_area.size > 0 %}<p style="margin:0.15rem 0;color:#495057;">{{ m.research_area }}</p>{% endif %}
     {% assign has_contact = false %}
     {% if m.email.size > 0 %}{% assign has_contact = true %}{% endif %}
     {% if m.website.size > 0 %}{% assign has_contact = true %}{% endif %}
