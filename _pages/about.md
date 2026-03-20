@@ -2,11 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: AI & Business Analytics Lab @ <a href='https://gsb.kaist.ac.kr'>KAIST College of Business</a>
+subtitle: AI & Business Analytics Lab @ <a href='https://business.kaist.ac.kr'>KAIST College of Business</a> (Seoul Campus)
 
 profile: false
 
-selected_papers: true
+selected_papers: false
 social: false
 
 announcements:
@@ -18,20 +18,19 @@ latest_posts:
   enabled: false
 ---
 
-Welcome to the **AI & Business Analytics (AIBA) Lab** at KAIST College of Business (School of Management Engineering), led by **Associate Professor Donghyuk Shin**.
+Welcome to the **AI & Business Analytics (AIBA) Lab** at KAIST College of Business (School of Management Engineering), led by professor **Donghyuk Shin**.
 
-We combine AI and business analytics to empirically analyze the economic and social value of artificial intelligence. Our research lies at the intersection of **artificial intelligence** and **information systems**, covering diverse business domains including digital platforms, online communities, and technology-driven services. Methodologically, we employ machine learning, econometric analysis, and randomized field experiments.
-
+We study how artificial intelligence reshapes markets, organizations, and society. Our research lies at the intersection of **artificial intelligence** and **information systems**, spanning diverse business domains including digital platforms, online communities, healthcare systems, and technology-driven services. Methodologically, we operate across three traditions: econometric causal analysis, field and lab experiments, and AI/ML model development.
 ## Research Areas
 
 **Economics of AI/IT**
-- Understanding the economic and societal impact of AI and IT technologies
-- Topics: causal inference, field experiments, platform economics
+- What happens when AI and IT technologies enter real-world businesses, markets, and organizations? We study the economic and societal consequences of technology adoption across education, healthcare, labor, services, and digital markets, including how humans collaborate with and adapt to AI.
+- Keywords: causal inference, field/lab experiments, human-AI interaction
 
 **AI/ML Applications**
-- Developing and applying AI/ML methods to solve business problems
-- Topics: LLM simulation, generative AI, human-AI interaction
+- How can AI/ML methods be developed and applied to solve business problems, and where do they fall short? We build and rigorously evaluate models for tasks ranging from demand forecasting and link prediction to behavioral simulation.
+- Keywords: agent-based social simulation, agentic AI, generative AI, deep learning
 
 **Digital Platforms**
-- Analyzing platform ecosystems, user behavior, and content dynamics
-- Topics: misinformation, content moderation, social media
+- How do platform design and policy shape user behavior, content ecosystems, and market outcomes? We analyze the dynamics of digital platforms, including information quality, content governance, and competitive and social effects.
+- Keywords: misinformation, content moderation, AI-generated content, social media

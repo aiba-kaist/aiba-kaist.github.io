@@ -4,15 +4,14 @@
       "name_en": "Donghyuk Shin",
       "role": "Faculty",
       "position": "Associate Professor",
-      "affiliation": "KAIST College of Business (School of Management Engineering)",
-      "email": "dhs@kaist.ac.kr",
-      "website": "https://dshin32.github.io",
+      "affiliation": "KAIST, College of Business, School of Management Engineering",
+      "email": "dhs -at- kaist -dot- ac -dot- kr",
+      "office": "SUPEX 286 (Seoul Campus)",
+      "phone": "+82-2-958-3286",
       "research_area": "Artificial Intelligence, Economics of AI and IT, AI/ML Applications, Digital Platforms",
-      "bio": "I am an Associate Professor in the College of Business (School of Management Engineering) at the Korea Advanced Institute of Science and Technology (KAIST). My research interests lie at the intersection of machine learning (ML) and information systems. Topics of interest include but are not limited to artificial intelligence, digital platforms, educational technology, and their business and societal impacts. In my research, I use ML, econometric analysis, and randomized field experiments.\n\nPrior to joining KAIST, I was an Assistant Professor of Information Systems at the W. P. Carey School of Business, Arizona State University (2019–2024). Before that, I served as a Machine Learning Scientist at Amazon Web Services (2016–2019), where I developed and implemented ML systems to understand and serve customer needs on the world's largest Cloud platform. I obtained my Ph.D. in Computer Science from the University of Texas at Austin under the supervision of Prof. Inderjit S. Dhillon. During my graduate studies, I had also closely worked with Prof. Andrew B. Whinston and spent time at Yahoo! Research (2014) and Amazon (2013).",
-      "education": "Ph.D. in Computer Science, The University of Texas at Austin",
-      "career": "Associate Professor, KAIST (2024~Present)|Assistant Professor, Arizona State University (2019~2024)|Machine Learning Scientist, Amazon Web Services (2016~2019)",
-      "advisory": "POSCO Holdings Inc. (N.EX.T Hub, AI Lab), AI Advisory Council, 2024",
-      "photo": "shin.jpg"
+      "education": "The University of Texas at Austin, Ph.D. in Computer Science",
+      "career": "<strong>KAIST</strong> (Seoul, Korea), Associate Professor, 2024–Present|<strong>Arizona State University</strong>, W. P. Carey School of Business (Tempe, AZ), Assistant Professor, 2019–2024|<strong>Amazon</strong> (Seattle, WA), Machine Learning Scientist, 2016–2019",
+      "photo": "prof_pic.jpg"
     },
     {
       "name_en": "Jaehyeong Park",
@@ -87,7 +86,7 @@
     {
       "name_en": "Woohyun Park",
       "role": "MS",
-      "research_area": "Platform",
+      "research_area": "AI/Platform",
       "start_year": 2025,
       "email": "",
       "website": "",
@@ -116,7 +115,7 @@
       "year": 2024,
       "type": "journal",
       "abbr": "MISQ",
-      "selected": true
+      "doi": ""
     },
     {
       "title": "Learning Outside the Classroom During a Pandemic: Evidence from an Artificial Intelligence-Based Education App",
@@ -124,8 +123,7 @@
       "venue": "Management Science",
       "year": 2023,
       "type": "journal",
-      "abbr": "MS",
-      "selected": true
+      "abbr": "MS"
     },
     {
       "title": "Predicting Firm Market Performance using the Social Media Promoter Score",
@@ -133,8 +131,7 @@
       "venue": "Marketing Letters",
       "year": 2022,
       "type": "journal",
-      "abbr": "ML",
-      "selected": true
+      "abbr": "ML"
     },
     {
       "title": "Enhancing Social Media Analysis with Visual Data Analytics: A Deep Learning Approach",
@@ -142,12 +139,11 @@
       "venue": "MIS Quarterly",
       "year": 2020,
       "type": "journal",
-      "abbr": "MISQ",
-      "selected": true
+      "abbr": "MISQ"
     },
     {
       "title": "GPTs are Just GPTs: Misinterpretation of LLM Simulation in Social Science Evidenced by PLS-SEM",
-      "authors": "Kim, Sunwoong and Jeong, Jongho and Han, Jinsu and Shin, Donghyuk",
+      "authors": "Kim, Sunwoong and Jeong, Jongho and Han, Jin Soo and Shin, Donghyuk",
       "venue": "Workshop on Information Technologies and Systems (WITS)",
       "year": 2025,
       "type": "conference",
@@ -172,12 +168,11 @@
     },
     {
       "title": "PlaceSim: An LLM-based Interactive Platform for Human Behavior Simulation in Physical Facilities",
-      "authors": "Lee, Suhyeon and Yu, Youngjun and Shin, Donghyuk and Singh, Rahul",
+      "authors": "Lee, Suhyeon and Yu, Youngjun and Shin, Donghyuk and Singh, Rita",
       "venue": "Proceedings of the 34th ACM International Conference on Information and Knowledge Management (CIKM)",
       "year": 2025,
       "type": "conference",
-      "abbr": "CIKM",
-      "selected": true
+      "abbr": "CIKM"
     },
     {
       "title": "Unpacking the Impact of AI Coding Assistants on Software Products: Evidence from Steam Indie Games",
@@ -189,7 +184,7 @@
     },
     {
       "title": "LLM-Mirror: A Generated-Persona Approach for Survey Pre-Testing",
-      "authors": "Kim, Seokhyun and Jeong, Jaehoon and Han, Jae Seung and Shin, Donghyuk",
+      "authors": "Kim, Sunwoong and Jeong, Jongho and Han, Jin Soo and Shin, Donghyuk",
       "venue": "AAAI Conference on Artificial Intelligence—Workshop on Economics of Modern ML",
       "year": 2025,
       "type": "conference",
@@ -197,7 +192,7 @@
     },
     {
       "title": "When Does Text Boost Images: An Empirical Investigation of the Dynamics of Information",
-      "authors": "Park, Junhoe and Cho, Daegon and Shin, Donghyuk",
+      "authors": "Park, Joonhwae and Cho, Daegon and Shin, Donghyuk",
       "venue": "International Conference on Information Systems (ICIS)",
       "year": 2024,
       "type": "conference",
@@ -214,7 +209,7 @@
     },
     {
       "title": "Battle of the AIs: The Impact of Generative Language Models on AI Services",
-      "authors": "Lee, Sang Jun and Shin, Donghyuk and Han, Sang Pil",
+      "authors": "Lee, Seung Jong and Shin, Donghyuk and Han, Sang Pil",
       "venue": "Conference on Information Systems and Technology (CIST)",
       "year": 2023,
       "type": "conference",
@@ -223,15 +218,15 @@
     },
     {
       "title": "Graph Representation Learning for Reciprocal Recommendation in IT-enabled Social Networks",
-      "authors": "Kim, Byungkyu and Lee, Kanghyun and Shin, Donghyuk and Han, Sang Pil and Ram, Sudha",
+      "authors": "Kim, Buomsoo and Lee, Kyuhan and Shin, Donghyuk and Han, Sang Pil and Ram, Sudha",
       "venue": "Workshop on Information Technologies and Systems (WITS)",
       "year": 2022,
       "type": "conference",
       "abbr": "WITS"
     },
     {
-      "title": "Achieving the Double Bottom Line with Artificial Intelligence by Addressing Inequity",
-      "authors": "Jeong, Daewon and Shin, Donghyuk and Auh, Seigyoung and Han, Sang Pil",
+      "title": "Achieving the Double Bottom Line with Artificial Intelligence by Addressing Inequity: A Global Comparative Analysis of an Educational Technology Firm",
+      "authors": "Jeong, Dahae and Shin, Donghyuk and Auh, Seigyoung and Han, Sang Pil",
       "venue": "International Conference on Information Systems (ICIS)",
       "year": 2022,
       "type": "conference",
@@ -274,35 +269,13 @@
     {
       "course_code": "BME.89909",
       "course_name": "Machine Learning for Business Data Analysis II",
-      "description": "",
-      "topics": "Machine Learning, Deep Learning, NLP, Causal Inference",
       "is_current": true,
       "semester": "Spring 2024, Fall 2025"
     },
     {
       "course_code": "BIZ.60081",
       "course_name": "Artificial Intelligence for Business Applications",
-      "description": "",
-      "topics": "Platform Economics, AI/IT Economics, Digital Transformation",
       "is_current": true
-    },
-    {
-      "course_code": "",
-      "course_name": "Business Analytics",
-      "semester": "2023-2024",
-      "is_current": false
-    },
-    {
-      "course_code": "",
-      "course_name": "IT and Strategy",
-      "semester": "2023-2024",
-      "is_current": false
-    },
-    {
-      "course_code": "",
-      "course_name": "Data Science for Business",
-      "semester": "2022-2023",
-      "is_current": false
     }
   ],
   "industry": [
@@ -310,6 +283,16 @@
       "name": "Baemin",
       "type": "Collaborator",
       "logo": "baemin.jpg"
+    },
+    {
+      "name": "ClassU",
+      "type": "Collaborator",
+      "logo": "classu.png"
+    },
+    {
+      "type": "Collaborator",
+      "logo": "datarize.jpg",
+      "name": "Datarize"
     },
     {
       "name": "Hankook Tire",
@@ -322,19 +305,19 @@
       "logo": "htbeyond.png"
     },
     {
-      "name": "ClassU",
       "type": "Collaborator",
-      "logo": "classu.png"
-    },
-    {
-      "name": "Social Solidarity Bank",
-      "type": "Collaborator",
-      "logo": "ssb.png"
+      "name": "indid.lab",
+      "logo": "akr20220926044100003_01_i_p4.jpg"
     },
     {
       "name": "QANDA",
       "type": "Collaborator",
       "logo": "qanda.jpg"
+    },
+    {
+      "name": "Social Solidarity Bank",
+      "type": "Collaborator",
+      "logo": "ssb.png"
     },
     {
       "name": "National Research Foundation of Korea (NRF)",
