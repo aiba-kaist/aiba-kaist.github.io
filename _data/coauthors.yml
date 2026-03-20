@@ -1,34 +1,57 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+# AIBA Lab Members
+"shin":
+  - firstname: ["Donghyuk", "D."]
+    url: /team/#faculty
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"lee":
+  - firstname: ["Suhyeon"]
+    url: /team/#phd-students
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"park":
+  - firstname: ["Junhoe"]
+    url: /team/#phd-students
+  - firstname: ["Woohyun"]
+    url: /team/#ms-students
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"baek":
+  - firstname: ["Junha"]
+    url: /team/#phd-students
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"kim":
+  - firstname: ["Gaon"]
+    url: /team/#phd-students
+  - firstname: ["Seohyun"]
+    url: /team/#phd-students
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"yu":
+  - firstname: ["Youngjun"]
+    url: /team/#phd-students
 
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
+"ahn":
+  - firstname: ["Taehyun"]
+    url: /team/#phd-students
 
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
+"seo":
+  - firstname: ["Yeonwoo"]
+    url: /team/#undergraduate-researcher
 
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"yoo":
+  - firstname: ["Woojeong"]
+    url: /team/#alumni
+
+# Collaborators
+"han":
+  - firstname: ["Sang Pil"]
+    url: https://search.asu.edu/profile/3493633
+
+"auh":
+  - firstname: ["Seigyoung"]
+    url: https://business.kaist.ac.kr/faculty/seigyoung-auh
+
+"singh":
+  - firstname: ["Rahul"]
+    url: https://search.asu.edu/profile/4523761
+
+"dhillon":
+  - firstname: ["Inderjit", "Inderjit S", "Inderjit S."]
+    url: https://www.cs.utexas.edu/~inderjit/

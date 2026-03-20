@@ -433,6 +433,9 @@ function renderMembers() {
           <div class="form-row"><label>역할</label><select onchange="data.members[${i}].role=this.value;renderMembers()"><option ${m.role==='Faculty'?'selected':''}>Faculty</option><option ${m.role==='PhD'?'selected':''}>PhD</option><option ${m.role==='MS'?'selected':''}>MS</option><option ${m.role==='Undergrad'?'selected':''}>Undergrad</option><option ${m.role==='Alumni'?'selected':''}>Alumni</option></select></div>
           <div class="form-row"><label>연구분야</label><input value="${m.research_area||''}" onchange="data.members[${i}].research_area=this.value"></div>
           <div class="form-row"><label>이메일</label><input value="${m.email||''}" onchange="data.members[${i}].email=this.value"></div>
+          <div class="form-row"><label>홈페이지</label><input value="${m.website||''}" onchange="data.members[${i}].website=this.value" placeholder="https://..."></div>
+          ${['PhD','MS'].includes(m.role)?`<div class="form-row"><label>입학연도</label><input type="number" value="${m.start_year||''}" onchange="data.members[${i}].start_year=parseInt(this.value)" placeholder="2024"></div>`:''}
+          ${m.role==='PhD'?`<div class="form-row"><label>Job Market</label><input value="${m.job_market||''}" onchange="data.members[${i}].job_market=this.value" placeholder="2028 (공란시 미표시)"></div>`:''}
         </div>
         ${m.role==='Alumni'?`<div class="form-row"><label>졸업정보</label><input value="${m.graduation_info||''}" onchange="data.members[${i}].graduation_info=this.value" placeholder="M.S. 2025 · PwC"></div>`:''}
         ${m.role==='Faculty'?`<div class="form-row"><label>약력</label><textarea onchange="data.members[${i}].bio=this.value">${m.bio||''}</textarea></div>`:''}

@@ -18,56 +18,87 @@
       "name_en": "Jaehyeong Park",
       "role": "PhD",
       "research_area": "IT/AI",
+      "start_year": 2024,
+      "email": "",
+      "website": "",
+      "job_market": "",
       "photo": "park_jaehyeong.jpg"
     },
     {
       "name_en": "Junha Baek",
       "role": "PhD",
       "research_area": "Generative AI",
+      "start_year": 2024,
+      "email": "",
+      "website": "",
+      "job_market": "",
       "photo": "baek_junha.png"
     },
     {
       "name_en": "Gaon Kim",
       "role": "PhD",
       "research_area": "Financial AI",
-      "photo": "kim_gaon.jpg",
-      "email": "gaon0918@kaist.ac.kr"
+      "start_year": 2024,
+      "email": "gaon0918@kaist.ac.kr",
+      "website": "",
+      "job_market": "",
+      "photo": "kim_gaon.jpg"
     },
     {
       "name_en": "Youngjun Yu",
       "role": "PhD",
       "research_area": "IT/AI",
+      "start_year": 2024,
+      "email": "",
+      "website": "",
+      "job_market": "",
       "photo": "yoo_youngjun.png"
     },
     {
       "name_en": "Taehyeon An",
       "role": "PhD",
       "research_area": "AI Agent",
-      "photo": "ahn_taehyun.png",
-      "email": "taeohy@kaist.ac.kr"
+      "start_year": 2025,
+      "email": "taeohy@kaist.ac.kr",
+      "website": "",
+      "job_market": "",
+      "photo": "ahn_taehyun.png"
     },
     {
       "name_en": "Seohyun Kim",
       "role": "PhD",
       "research_area": "Healthcare AI",
+      "start_year": 2025,
+      "email": "",
+      "website": "",
+      "job_market": "",
       "photo": "kim_seohyun.png"
     },
     {
       "name_en": "Suhyeon Lee",
       "role": "PhD",
-      "research_area": "LLM",
+      "research_area": "LLM-based Social Simulation, Human-AI Collaboration",
+      "start_year": 2025,
+      "email": "suhyeon@kaist.ac.kr",
+      "website": "https://suhyeonlee.github.io",
+      "job_market": "",
       "photo": "lee_suhyeon.png"
     },
     {
       "name_en": "Woohyun Park",
       "role": "MS",
       "research_area": "Platform",
+      "start_year": 2025,
+      "email": "",
+      "website": "",
       "photo": "park_woohyun.png"
     },
     {
       "name_en": "Yeonwoo Seo",
       "role": "Undergrad",
       "research_area": "Causal ML",
+      "email": "",
+      "website": "",
       "photo": "seo_yeonwoo.jpg"
     },
     {

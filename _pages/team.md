@@ -7,6 +7,14 @@ nav: true
 nav_order: 2
 ---
 
+<style>
+.member-row { transition: background 0.2s; border-radius: 8px; padding: 0.5rem; }
+.member-row:hover { background: rgba(0,0,0,0.02); }
+.member-row h5 a:hover { color: var(--global-theme-color) !important; }
+.member-row img { transition: transform 0.2s; }
+.member-row:hover img { transform: scale(1.05); }
+</style>
+
 {% assign members_data = site.data.admin_data.members %}
 
 {% if members_data %}
@@ -67,15 +75,39 @@ nav_order: 2
 {% if phd.size > 0 %}
 ## Ph.D. Students
 
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
 {% for m in phd %}
-  <div style="text-align:center;">
-    <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:140px;height:140px;object-fit:cover;object-position:top;">
-    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">{{ m.name_en }}</h5>
-    <p style="color:#6c757d;margin:0;">{{ m.research_area }}</p>
+{% assign name_parts = m.name_en | split: ' ' %}
+{% assign last_name = name_parts | last %}
+{% assign year_diff = 2026 | minus: m.start_year %}
+{% if year_diff == 1 %}{% assign year_str = "1st year" %}
+{% elsif year_diff == 2 %}{% assign year_str = "2nd year" %}
+{% elsif year_diff == 3 %}{% assign year_str = "3rd year" %}
+{% else %}{% assign year_str = year_diff | append: "th year" %}{% endif %}
+
+<div class="row mb-4 member-row" style="align-items:center;">
+  <div class="col-auto">
+    <a href="/publications/?author={{ last_name }}">
+      <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;object-position:top;">
+    </a>
   </div>
-{% endfor %}
+  <div class="col">
+    <h5 style="margin-bottom:0.25rem;"><a href="/publications/?author={{ last_name }}" style="color:inherit;text-decoration:none;">{{ m.name_en }}</a></h5>
+    <p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>
+    {% if m.start_year %}<p style="margin:0.15rem 0;color:#6c757d;">{{ year_str }} · Started {{ m.start_year }}</p>{% endif %}
+    {% assign has_contact = false %}
+    {% if m.email.size > 0 %}{% assign has_contact = true %}{% endif %}
+    {% if m.website.size > 0 %}{% assign has_contact = true %}{% endif %}
+    {% if m.job_market.size > 0 %}{% assign has_contact = true %}{% endif %}
+    {% if has_contact %}
+    <p style="margin:0.15rem 0;color:#6c757d;">
+      {% if m.email.size > 0 %}<a href="mailto:{{ m.email }}">{{ m.email }}</a>{% endif %}
+      {% if m.website.size > 0 %}{% if m.email.size > 0 %} · {% endif %}<a href="{{ m.website }}">Homepage</a>{% endif %}
+      {% if m.job_market.size > 0 %}<span style="margin-left:0.5rem;background:#dc3545;color:white;padding:2px 8px;border-radius:4px;font-size:0.85rem;">📢 Job Market {{ m.job_market }}</span>{% endif %}
+    </p>
+    {% endif %}
+  </div>
 </div>
+{% endfor %}
 
 ---
 {% endif %}
@@ -83,15 +115,36 @@ nav_order: 2
 {% if ms.size > 0 %}
 ## M.S. Students
 
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
 {% for m in ms %}
-  <div style="text-align:center;">
-    <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:140px;height:140px;object-fit:cover;object-position:top;">
-    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">{{ m.name_en }}</h5>
-    <p style="color:#6c757d;margin:0;">{{ m.research_area }}</p>
+{% assign name_parts = m.name_en | split: ' ' %}
+{% assign last_name = name_parts | last %}
+{% assign year_diff = 2026 | minus: m.start_year %}
+{% if year_diff == 1 %}{% assign year_str = "1st year" %}
+{% elsif year_diff == 2 %}{% assign year_str = "2nd year" %}
+{% else %}{% assign year_str = year_diff | append: "th year" %}{% endif %}
+
+<div class="row mb-4 member-row" style="align-items:center;">
+  <div class="col-auto">
+    <a href="/publications/?author={{ last_name }}">
+      <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;object-position:top;">
+    </a>
   </div>
-{% endfor %}
+  <div class="col">
+    <h5 style="margin-bottom:0.25rem;"><a href="/publications/?author={{ last_name }}" style="color:inherit;text-decoration:none;">{{ m.name_en }}</a></h5>
+    <p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>
+    {% if m.start_year %}<p style="margin:0.15rem 0;color:#6c757d;">{{ year_str }} · Started {{ m.start_year }}</p>{% endif %}
+    {% assign has_contact = false %}
+    {% if m.email.size > 0 %}{% assign has_contact = true %}{% endif %}
+    {% if m.website.size > 0 %}{% assign has_contact = true %}{% endif %}
+    {% if has_contact %}
+    <p style="margin:0.15rem 0;color:#6c757d;">
+      {% if m.email.size > 0 %}<a href="mailto:{{ m.email }}">{{ m.email }}</a>{% endif %}
+      {% if m.website.size > 0 %}{% if m.email.size > 0 %} · {% endif %}<a href="{{ m.website }}">Homepage</a>{% endif %}
+    </p>
+    {% endif %}
+  </div>
 </div>
+{% endfor %}
 
 ---
 {% endif %}
@@ -99,15 +152,31 @@ nav_order: 2
 {% if undergrad.size > 0 %}
 ## Undergraduate Researcher
 
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
 {% for m in undergrad %}
-  <div style="text-align:center;">
-    <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:140px;height:140px;object-fit:cover;object-position:top;">
-    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">{{ m.name_en }}</h5>
-    <p style="color:#6c757d;margin:0;">{{ m.research_area }}</p>
+{% assign name_parts = m.name_en | split: ' ' %}
+{% assign last_name = name_parts | last %}
+
+<div class="row mb-4 member-row" style="align-items:center;">
+  <div class="col-auto">
+    <a href="/publications/?author={{ last_name }}">
+      <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:100px;height:100px;object-fit:cover;object-position:top;">
+    </a>
   </div>
-{% endfor %}
+  <div class="col">
+    <h5 style="margin-bottom:0.25rem;"><a href="/publications/?author={{ last_name }}" style="color:inherit;text-decoration:none;">{{ m.name_en }}</a></h5>
+    <p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>
+    {% assign has_contact = false %}
+    {% if m.email.size > 0 %}{% assign has_contact = true %}{% endif %}
+    {% if m.website.size > 0 %}{% assign has_contact = true %}{% endif %}
+    {% if has_contact %}
+    <p style="margin:0.15rem 0;color:#6c757d;">
+      {% if m.email.size > 0 %}<a href="mailto:{{ m.email }}">{{ m.email }}</a>{% endif %}
+      {% if m.website.size > 0 %}{% if m.email.size > 0 %} · {% endif %}<a href="{{ m.website }}">Homepage</a>{% endif %}
+    </p>
+    {% endif %}
+  </div>
 </div>
+{% endfor %}
 
 ---
 {% endif %}
@@ -115,15 +184,17 @@ nav_order: 2
 {% if alumni.size > 0 %}
 ## Alumni
 
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
 {% for m in alumni %}
-  <div style="text-align:center;">
-    <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:140px;height:140px;object-fit:cover;object-position:top;">
-    <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">{{ m.name_en }}</h5>
-    <p style="color:#6c757d;margin:0;">{{ m.graduation_info }}</p>
+<div class="row mb-3" style="align-items:center;">
+  <div class="col-auto">
+    <img class="rounded" src="/assets/img/members/{{ m.photo }}" alt="{{ m.name_en }}" style="width:80px;height:80px;object-fit:cover;object-position:top;">
   </div>
-{% endfor %}
+  <div class="col">
+    <h5 style="margin-bottom:0.25rem;">{{ m.name_en }}</h5>
+    <p style="margin:0;color:#6c757d;">{{ m.graduation_info }}</p>
+  </div>
 </div>
+{% endfor %}
 {% endif %}
 
 {% else %}
@@ -167,7 +238,7 @@ nav_order: 2
 
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:1.5rem;">
   <div style="text-align:center;">
-    <img class="rounded" src="/assets/img/members/park_jaehyung.jpg" alt="Junhoe Park" style="width:140px;height:140px;object-fit:cover;object-position:top;">
+    <img class="rounded" src="/assets/img/members/park_jaehyeong.jpg" alt="Jaehyeong Park" style="width:140px;height:140px;object-fit:cover;object-position:top;">
     <h5 style="margin-top:0.5rem;margin-bottom:0.25rem;">Junhoe Park</h5>
     <p style="color:#6c757d;margin:0;">IT/AI</p>
   </div>
