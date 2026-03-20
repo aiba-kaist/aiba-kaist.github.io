@@ -332,6 +332,11 @@
   ],
   "gallery": [
     {
+      "image": "joint-seminar.png",
+      "caption": "KAIST-UBC-ASU Monthly Seminar",
+      "category": "Conferences"
+    },
+    {
       "image": "cist.png",
       "caption": "CIST 2025, Atlanta",
       "category": "Conferences"
@@ -343,12 +348,7 @@
     },
     {
       "image": "cikm.jpg",
-      "caption": "CIKM 2025",
-      "category": "Conferences"
-    },
-    {
-      "image": "joint-seminar.png",
-      "caption": "KAIST-UBC-ASU Joint Seminar",
+      "caption": "CIKM 2025, Seoul",
       "category": "Conferences"
     },
     {
