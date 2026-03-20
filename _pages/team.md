@@ -77,7 +77,7 @@ nav_order: 2
 {% for m in phd %}
 {% assign name_parts = m.name_en | split: ' ' %}
 {% assign last_name = name_parts | last %}
-{% assign year_diff = 2026 | minus: m.start_year %}
+{% assign year_diff = 2026 | minus: m.start_year | plus: 1 %}
 {% if year_diff == 1 %}{% assign year_str = "1st year" %}
 {% elsif year_diff == 2 %}{% assign year_str = "2nd year" %}
 {% elsif year_diff == 3 %}{% assign year_str = "3rd year" %}
@@ -91,8 +91,8 @@ nav_order: 2
   </div>
   <div class="col">
     <h5 style="margin-bottom:0.25rem;"><a href="/publications/?author={{ last_name }}" style="color:inherit;text-decoration:none;">{{ m.name_en }}</a></h5>
-    <p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>
-    {% if m.start_year %}<p style="margin:0.15rem 0;color:#6c757d;">{{ year_str }} · Started {{ m.start_year }}</p>{% endif %}
+    {% if m.research_area.size > 0 %}<p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>{% endif %}
+    {% if m.start_year and m.start_year > 0 %}<p style="margin:0.15rem 0;color:#6c757d;">{{ year_str }}</p>{% endif %}
     {% assign has_contact = false %}
     {% if m.email.size > 0 %}{% assign has_contact = true %}{% endif %}
     {% if m.website.size > 0 %}{% assign has_contact = true %}{% endif %}
@@ -117,7 +117,7 @@ nav_order: 2
 {% for m in ms %}
 {% assign name_parts = m.name_en | split: ' ' %}
 {% assign last_name = name_parts | last %}
-{% assign year_diff = 2026 | minus: m.start_year %}
+{% assign year_diff = 2026 | minus: m.start_year | plus: 1 %}
 {% if year_diff == 1 %}{% assign year_str = "1st year" %}
 {% elsif year_diff == 2 %}{% assign year_str = "2nd year" %}
 {% else %}{% assign year_str = year_diff | append: "th year" %}{% endif %}
@@ -130,8 +130,8 @@ nav_order: 2
   </div>
   <div class="col">
     <h5 style="margin-bottom:0.25rem;"><a href="/publications/?author={{ last_name }}" style="color:inherit;text-decoration:none;">{{ m.name_en }}</a></h5>
-    <p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>
-    {% if m.start_year %}<p style="margin:0.15rem 0;color:#6c757d;">{{ year_str }} · Started {{ m.start_year }}</p>{% endif %}
+    {% if m.research_area.size > 0 %}<p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>{% endif %}
+    {% if m.start_year and m.start_year > 0 %}<p style="margin:0.15rem 0;color:#6c757d;">{{ year_str }}</p>{% endif %}
     {% assign has_contact = false %}
     {% if m.email.size > 0 %}{% assign has_contact = true %}{% endif %}
     {% if m.website.size > 0 %}{% assign has_contact = true %}{% endif %}
@@ -163,7 +163,7 @@ nav_order: 2
   </div>
   <div class="col">
     <h5 style="margin-bottom:0.25rem;"><a href="/publications/?author={{ last_name }}" style="color:inherit;text-decoration:none;">{{ m.name_en }}</a></h5>
-    <p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>
+    {% if m.research_area.size > 0 %}<p style="margin:0.15rem 0;color:#495057;"><strong>Research:</strong> {{ m.research_area }}</p>{% endif %}
     {% assign has_contact = false %}
     {% if m.email.size > 0 %}{% assign has_contact = true %}{% endif %}
     {% if m.website.size > 0 %}{% assign has_contact = true %}{% endif %}
