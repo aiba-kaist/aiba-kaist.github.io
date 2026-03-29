@@ -9,7 +9,7 @@ nav_order: 7
 
 ## Contact Information
 
-**AI & Business Analytics Lab (AIBA Lab)**  
+**AI & Business Analytics (AIBA) Lab**  
 KAIST, College of Business, School of Management Engineering
 
 📍 **Address**  

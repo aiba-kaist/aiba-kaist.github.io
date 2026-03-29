@@ -40,7 +40,6 @@ nav_order: 2
     
     <p><strong>Email:</strong> {{ m.email }}</p>
     <p><strong>Office:</strong> {{ m.office }}</p>
-    <p><strong>Tel:</strong> {{ m.phone }}</p>
     
     {% if m.bio %}
     {% assign bio_paragraphs = m.bio | split: "\n\n" %}
@@ -50,7 +49,7 @@ nav_order: 2
     {% endif %}
   </div>
 
-  <div class="col-sm-auto">
+  <div class="col-sm-auto mt-4">
   {% if m.education %}
   <p><strong>Education:</strong> {{ m.education }}</p>
   {% endif %}
