@@ -60,8 +60,9 @@
   }
 
   .navbar-nav .nav-item .nav-link {
-    color: var(--global-text-color);
+    color: #313D43;
     font-weight: 400; /* 1. 일반 메뉴 굵기를 400으로 명시적으로 고정 */
+    font-size: 0.95rem;
 
     &:hover {
       color: var(--global-hover-color);
@@ -72,6 +73,7 @@
     background-color: inherit;
     font-weight: 500; /* 2. bolder 대신 정확한 숫자 500으로 고정 */
     color: var(--global-theme-color);
+    font-size: 0.95rem;
 
     &:hover {
       color: var(--global-hover-color);
