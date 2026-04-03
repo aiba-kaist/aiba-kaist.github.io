@@ -336,6 +336,11 @@
   ],
   "gallery": [
     {
+      "category": "Lab Life",
+      "image": "img_1131.jpg",
+      "caption": "Cherry Blossom Picnic"
+    },
+    {
       "image": "joint-seminar.png",
       "caption": "KAIST-UBC-ASU Monthly Seminar",
       "category": "Conferences"
