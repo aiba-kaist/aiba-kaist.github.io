@@ -1,57 +1,42 @@
 # AIBA Lab Members
-"shin":
-  - firstname: ["Donghyuk", "D."]
-    url: /team/#faculty
+# "shin":
+#   - firstname: ["Donghyuk", "D."]
+#     url: /team/#faculty
 
-"lee":
-  - firstname: ["Suhyeon"]
-    url: /team/#phd-students
+# "lee":
+#   - firstname: ["Suhyeon"]
+#     url: /team/#phd-students
 
-"park":
-  - firstname: ["Junhoe"]
-    url: /team/#phd-students
-  - firstname: ["Woohyun"]
-    url: /team/#ms-students
+# "park":
+#   - firstname: ["Junhoe"]
+#     url: /team/#phd-students
+#   - firstname: ["Woohyun"]
+#     url: /team/#ms-students
 
-"baek":
-  - firstname: ["Junha"]
-    url: /team/#phd-students
+# "baek":
+#   - firstname: ["Junha"]
+#     url: /team/#phd-students
 
-"kim":
-  - firstname: ["Gaon"]
-    url: /team/#phd-students
-  - firstname: ["Seohyun"]
-    url: /team/#phd-students
+# "kim":
+#   - firstname: ["Gaon"]
+#     url: /team/#phd-students
+#   - firstname: ["Seohyun"]
+#     url: /team/#phd-students
 
-"yu":
-  - firstname: ["Youngjun"]
-    url: /team/#phd-students
+# "yu":
+#   - firstname: ["Youngjun"]
+#     url: /team/#phd-students
 
-"ahn":
-  - firstname: ["Taehyun"]
-    url: /team/#phd-students
+# "ahn":
+#   - firstname: ["Taehyun"]
+#     url: /team/#phd-students
 
-"seo":
-  - firstname: ["Yeonwoo"]
-    url: /team/#undergraduate-researcher
+# "seo":
+#   - firstname: ["Yeonwoo"]
+#     url: /team/#undergraduate-researcher
 
-"yoo":
-  - firstname: ["Woojeong"]
-    url: /team/#alumni
+# "yoo":
+#   - firstname: ["Woojeong"]
+#     url: /team/#alumni
 
 # Collaborators
-"han":
-  - firstname: ["Sang Pil"]
-    url: https://search.asu.edu/profile/3493633
-
-"auh":
-  - firstname: ["Seigyoung"]
-    url: https://business.kaist.ac.kr/faculty/seigyoung-auh
-
-"singh":
-  - firstname: ["Rahul"]
-    url: https://search.asu.edu/profile/4523761
-
-"dhillon":
-  - firstname: ["Inderjit", "Inderjit S", "Inderjit S."]
-    url: https://www.cs.utexas.edu/~inderjit/
