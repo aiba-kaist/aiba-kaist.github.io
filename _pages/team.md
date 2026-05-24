@@ -36,7 +36,14 @@ nav_order: 2
   <div class="col-sm-9">
     <h4>{{ m.name_en }}</h4>
     <p>{{ m.position }}<br>
-    {{ m.affiliation }}<br></p>
+    {{ m.affiliation }}<br>
+
+    {% if m.secondary_positions %}
+    {% for pos in m.secondary_positions %}
+    {{ pos }}<br>
+    {% endfor %}
+    {% endif %}
+    </p>
     
     <p><strong>Email:</strong> {{ m.email }}</p>
     <p><strong>Office:</strong> {{ m.office }}</p>
