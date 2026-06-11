@@ -95,6 +95,14 @@
       "photo": "park_woohyun.png"
     },
     {
+      "role": "MS",
+      "name_en": "Myungsu Kwak",
+      "email": "myungsu.kwak@gmail.com",
+      "start_year": 2026,
+      "research_area": "LLM",
+      "photo": "img_1781140607068.jpg"
+    },
+    {
       "name_en": "Yeonwoo Seo",
       "role": "Undergrad",
       "research_area": "Causal ML",
