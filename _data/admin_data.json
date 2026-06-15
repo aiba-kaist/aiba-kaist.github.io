@@ -300,11 +300,6 @@
       "logo": "classu.png"
     },
     {
-      "type": "Collaborator",
-      "logo": "datarize.jpg",
-      "name": "Datarize"
-    },
-    {
       "name": "Hankook Tire",
       "type": "Collaborator",
       "logo": "hankook.png"
@@ -317,7 +312,7 @@
     {
       "type": "Collaborator",
       "name": "indid.lab",
-      "logo": "akr20220926044100003_01_i_p4.jpg"
+      "logo": "indidlab.jpg"
     },
     {
       "name": "QANDA",
@@ -335,9 +330,14 @@
       "name": "Tesser"
     },
     {
+      "type": "Collaborator",
+      "logo": "tradlinx.jpg",
+      "name": "Tradlinx"
+    },
+    {
       "name": "National Research Foundation of Korea (NRF)",
       "type": "Funding",
-      "logo": "nrf.png"
+      "logo": "nrf.jpg"
     },
     {
       "name": "Institute of Information & Communications Technology Planning & Evaluation (IITP)",
