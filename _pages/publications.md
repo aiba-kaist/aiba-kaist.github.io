@@ -29,7 +29,7 @@ nav_order: 3
 
 <h2>Conferences</h2>
 
-{% bibliography --query @inproceedings* %}
+{% bibliography --query @inproceedings* --group_by year --group_order descending %}
 
 </div>
 
