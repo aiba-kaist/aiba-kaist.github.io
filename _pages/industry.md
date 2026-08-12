@@ -4,7 +4,7 @@ permalink: /industry/
 title: industry
 description: Our industry partners and collaborations
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 {% assign industry_data = site.data.admin_data.industry %}

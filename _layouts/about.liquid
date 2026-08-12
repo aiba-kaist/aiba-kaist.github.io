@@ -40,31 +40,7 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <!-- News from admin_data.json -->
-    {% assign admin_news = site.data.admin_data.news %}
-    {% if admin_news and admin_news.size > 0 %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
-      </h2>
-      <div class="news">
-        <div class="table-responsive">
-          <table class="table table-sm table-borderless">
-            {% assign sorted_news = admin_news | sort: 'date' | reverse %}
-            {% for item in sorted_news limit: 5 %}
-              <tr>
-                <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
-                <td>{{ item.content }}</td>
-              </tr>
-            {% endfor %}
-          </table>
-        </div>
-      </div>
-    {% elsif page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
+    <!-- News moved to its own page: /news/ -->
 
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}

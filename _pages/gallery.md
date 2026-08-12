@@ -4,7 +4,7 @@ permalink: /gallery/
 title: gallery
 description: Photos and memories from AIBA Lab
 nav: true
-nav_order: 6
+nav_order: 7
 ---
 
 {% assign gallery_data = site.data.admin_data.gallery %}

@@ -4,7 +4,7 @@ permalink: /teaching/
 title: teaching
 description: Courses taught by Prof. Shin
 nav: true
-nav_order: 5
+nav_order: 6
 ---
 
 {% assign teaching_data = site.data.admin_data.teaching %}

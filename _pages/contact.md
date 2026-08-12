@@ -4,7 +4,7 @@ permalink: /contact/
 title: contact
 description: Get in touch with AIBA Lab
 nav: true
-nav_order: 7
+nav_order: 8
 ---
 
 ## Contact Information
