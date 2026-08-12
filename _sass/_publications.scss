@@ -49,17 +49,18 @@
 
         abbr {
           display: inline-block;
-          background-color: var(--global-theme-color);
+          background-color: transparent;
+          border: 1px solid var(--global-theme-color);
           margin-bottom: 0.5rem;
-          color: var(--global-card-bg-color) !important;
+          color: var(--global-theme-color) !important;
           font-size: 0.75rem;
           padding: 0.25em 0.5em;
-          font-weight: 500;
+          font-weight: 600;
           border-radius: 0.25rem;
           text-decoration: none;
 
           a {
-            color: white;
+            color: var(--global-theme-color);
 
             &:hover {
               text-decoration: none;
@@ -191,4 +192,32 @@
 .citation,
 .citation-number {
   color: var(--global-theme-color);
+}
+
+/* Inline award badge (replaces the old "Awarded" toggle button) */
+.publications ol.bibliography li .pub-award {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #a07600;
+}
+
+html[data-theme="dark"] .publications ol.bibliography li .pub-award {
+  color: #d4a72c;
+}
+
+/* Title links to DOI: keep title styling, subtle external mark */
+.publications ol.bibliography li .title a {
+  color: inherit;
+
+  &:hover {
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+
+  .title-link-mark {
+    font-size: 0.7em;
+    margin-left: 0.2rem;
+    color: var(--global-theme-color);
+  }
 }
