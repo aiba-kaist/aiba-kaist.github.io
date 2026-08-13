@@ -40,7 +40,27 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <!-- News moved to its own page: /news/ -->
+    <!-- Latest news (full list at /news/) -->
+    {% assign admin_news = site.data.admin_data.news %}
+    {% if admin_news and admin_news.size > 0 %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+      </h2>
+      <div class="news">
+        <div class="table-responsive">
+          <table class="table table-sm table-borderless">
+            {% assign sorted_news = admin_news | sort: 'date' | reverse %}
+            {% for item in sorted_news limit: 5 %}
+              <tr>
+                <th scope="row" style="width: 12%">{{ item.date | date: '%b %Y' }}</th>
+                <td>{{ item.content | markdownify | remove: '<p>' | remove: '</p>' | emojify }}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+        <a href="{{ '/news/' | relative_url }}">View all news &rarr;</a>
+      </div>
+    {% endif %}
 
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
@@ -52,7 +72,7 @@ layout: default
 
     <!-- Selected papers from admin_data.json -->
     {% assign admin_pubs = site.data.admin_data.publications %}
-    {% assign selected_pubs = admin_pubs | where: "selected", true %}
+    {% assign selected_pubs = admin_pubs | where: 'selected', true %}
     {% if selected_pubs and selected_pubs.size > 0 %}
       <h2>
         <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
@@ -64,7 +84,9 @@ layout: default
             <li>
               <div class="row">
                 <div class="col-sm-2 abbr">
-                  {% if pub.abbr %}<abbr class="badge">{{ pub.abbr }}</abbr>{% endif %}
+                  {% if pub.abbr -%}
+                    <abbr class="badge">{{ pub.abbr }}</abbr>
+                  {%- endif %}
                 </div>
                 <div class="col-sm-10">
                   <div class="title">{{ pub.title }}</div>
@@ -72,11 +94,24 @@ layout: default
                     {% assign authors_array = pub.authors | split: ' and ' %}
                     {% for author in authors_array %}
                       {% assign name_parts = author | split: ', ' %}
-                      {% if name_parts[0] == 'Shin' %}<em>{{ name_parts[1] }} {{ name_parts[0] }}</em>{% else %}{{ name_parts[1] }} {{ name_parts[0] }}{% endif %}{% unless forloop.last %}, {% endunless %}
+                      {% if name_parts[0] == 'Shin' -%}
+                        <em>
+                          {{- name_parts[1] }}
+                          {{ name_parts[0] -}}
+                        </em>
+                      {%- else -%}
+                        {{- name_parts[1] }}
+                        {{ name_parts[0] -}}
+                      {%- endif -%}
+                      {%- unless forloop.last %}, {% endunless %}
                     {% endfor %}
                   </div>
-                  <div class="periodical"><em>{{ pub.venue }}</em>, {{ pub.year }}</div>
-                  {% if pub.award %}<div class="award">🏆 {{ pub.award }}</div>{% endif %}
+                  <div class="periodical">
+                    <em>{{ pub.venue }}</em>, {{ pub.year }}
+                  </div>
+                  {% if pub.award %}
+                    <div class="award">🏆 {{ pub.award }}</div>
+                  {% endif %}
                 </div>
               </div>
             </li>

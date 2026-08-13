@@ -31,7 +31,8 @@ nav_order: 1
     margin-bottom: 1rem;
   }
   .news-page .news-badge {
-    flex: 0 0 3.6rem;
+    flex: none;
+    width: 3.6rem;
     text-align: center;
     font-size: 0.72rem;
     font-weight: 700;
@@ -46,12 +47,6 @@ nav_order: 1
   .news-page .news-text {
     flex: 1;
     line-height: 1.65;
-  }
-  @media (max-width: 576px) {
-    .news-page .news-item {
-      flex-direction: column;
-      gap: 0.3rem;
-    }
   }
 </style>
 
