@@ -31,7 +31,7 @@ nav_order: 1
     margin-bottom: 1rem;
   }
   .news-page .news-badge {
-    flex: 0 0 5.4rem;
+    flex: 0 0 3.6rem;
     text-align: center;
     font-size: 0.72rem;
     font-weight: 700;
@@ -64,8 +64,8 @@ nav_order: 1
     <h2 class="news-year">{{ yg.name }}</h2>
     {% for item in yg.items %}
       <div class="news-item">
-        <span class="news-badge">{{ item.date | date: '%b %d' }}</span>
-        <div class="news-text">{{ item.content | emojify }}</div>
+        <span class="news-badge">{{ item.date | date: '%b' }}</span>
+        <div class="news-text">{{ item.content | markdownify | remove: '<p>' | remove: '</p>' | emojify }}</div>
       </div>
     {% endfor %}
   {% endfor %}
