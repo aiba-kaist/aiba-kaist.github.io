@@ -343,6 +343,11 @@
       "name": "Institute of Information & Communications Technology Planning & Evaluation (IITP)",
       "type": "Funding",
       "logo": "iitp.jpg"
+    },
+    {
+      "name": "Korea Technology and Information Promotion Agency for SMEs (TIPA)",
+      "type": "Funding",
+      "logo": "tipa.jpg"
     }
   ],
   "gallery": [
@@ -389,6 +394,10 @@
   ],
   "news": [
     {
+      "date": "2026-08-19",
+      "content": "Our group will participate in a collaborative research consortium with [TradLinx](https://www.tradlinx.com/) and [Pusan National University](https://www.pusan.ac.kr/) to develop the **\"Multi-Route Decision Support and AI Agent-Based Integrated SCM Automation Platform for Maritime Logistics\"**, supported by the [ScaleUp TIPS](https://scaleuptips.or.kr/) program of the Ministry of SMEs and Startups (funding period: 3 years)."
+    },
+    {
       "date": "2026-08-07",
       "content": "Our paper titled **\"When Persona Simulations Are Informative: Graph-Structured Signals for Pluralistic Opinion Sensing\"** has been accepted for presentation at [CIKM 2026](https://cikm2026.diag.uniroma1.it/). Congratulations, Taehyeon and Jaehyeong!"
     },
@@ -402,7 +411,7 @@
     },
     {
       "date": "2026-06-17",
-      "content": "Congratulations to Taehyeon on being selected for the Hyundai Motor Chung Mong-Koo Foundation Scholarship (현대차 정몽구 스칼러십)!"
+      "content": "Congratulations to Taehyeon on being selected for the Hyundai Motor CMK Foundation Scholarship (현대차 정몽구 스칼러십)!"
     },
     {
       "date": "2026-06-15",
@@ -413,12 +422,20 @@
       "content": "Congratulations to Woohyun on receiving the NRF Master's Research Fellowship (석사연구장려금)!"
     },
     {
+      "date": "2026-05-15",
+      "content": "Our project on **\"Persona-calibrated LLM Simulations\"** has been awarded funding through the NRF Early-career Researcher Program (funding period: 1 year)."
+    },
+    {
       "date": "2026-04-20",
       "content": "Our paper titled **\"The 2026 Service Research Priorities: AI-Driven Discovery, Interdisciplinary Influence Dynamics, and the “Interactive Service Scholarship Incubator” for Personalized Priorities\"** has been accepted for publication in the [Journal of Service Research](https://doi.org/10.1177/10946705261447646). Congratulations, Juneha!"
     },
     {
       "date": "2026-04-01",
       "content": "Prof. Shin has been appointed as an adjunct professor in the [Department of AX](https://ax.kaist.ac.kr/) (AI Transformation) at KAIST College of AI."
+    },
+    {
+      "date": "2026-03-25",
+      "content": "Our project on **\"Agent-to-Agent Commerce\"** has been awarded funding through the KAIST C2 (Creative & Challenging) Project (funding period: 9 months)."
     },
     {
       "date": "2026-03-16",
