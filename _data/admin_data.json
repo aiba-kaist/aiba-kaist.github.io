@@ -394,6 +394,14 @@
   ],
   "news": [
     {
+      "date": "2026-08-21",
+      "content": "Our group has **four papers** accepted for presentation at [CIST 2026](https://cist2026.github.io/). Congratulations, Suhyeon, Juneha, Jaehyeong, and Gaon!"
+    },
+    {
+      "date": "2026-08-20",
+      "content": "Our group has **two papers** accepted to Findings of [EMNLP 2026](https://2026.emnlp.org/). Congratulations, Juneha, Suhyeon, and Jaehyeong!"
+    },
+    {
       "date": "2026-08-19",
       "content": "Our group will participate in a collaborative research consortium with [TradLinx](https://www.tradlinx.com/) and [Pusan National University](https://www.pusan.ac.kr/) to develop the **\"Multi-Route Decision Support and AI Agent-Based Integrated SCM Automation Platform for Maritime Logistics\"**, supported by the [ScaleUp TIPS](https://scaleuptips.or.kr/) program of the Ministry of SMEs and Startups (funding period: 3 years)."
     },
