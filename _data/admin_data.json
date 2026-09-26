@@ -395,6 +395,10 @@
   ],
   "news": [
     {
+      "date": "2026-09-26",
+      "content": "Our paper titled **\"When the Buyer Is a Machine: The Diagnosticity–Exploration Tradeoff in Agentic Commerce\"** has been accepted for presentation at [ICIS 2026](https://icis2026.aisconferences.org/). Congratulations, Suhyeon!"
+    },
+    {
       "date": "2026-09-24",
       "content": "Our paper titled **\"Bridging Concepts: Multi-Agent Reasoning over Scientific Concept Graphs for High-Impact Research Prediction\"** has been accepted for presentation at the [KEIR Workshop](https://keir-workshop.github.io/) at CIKM 2026. Congratulations, Juneha!"
     },
