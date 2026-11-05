@@ -353,6 +353,11 @@
   ],
   "gallery": [
     {
+      "category": "Conferences",
+      "caption": "CIST 2026, San Francisco",
+      "image": "cist2026.png"
+    },
+    {
       "category": "Lab Life",
       "image": "img_1131.jpg",
       "caption": "Cherry Blossom Picnic"
