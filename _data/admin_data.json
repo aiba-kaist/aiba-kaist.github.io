@@ -291,6 +291,11 @@
   ],
   "industry": [
     {
+      "type": "Collaborator",
+      "logo": "adgcompany.jpg",
+      "name": "ADG Company"
+    },
+    {
       "name": "Baemin",
       "type": "Collaborator",
       "logo": "baemin.jpg"
@@ -324,11 +329,6 @@
       "name": "Social Solidarity Bank",
       "type": "Collaborator",
       "logo": "ssb.png"
-    },
-    {
-      "type": "Collaborator",
-      "logo": "tesser.png",
-      "name": "Tesser"
     },
     {
       "type": "Collaborator",
@@ -399,6 +399,10 @@
     }
   ],
   "news": [
+    {
+      "date": "2026-11-13",
+      "content": "Our paper titled \"Toward Inferring Consumer Contexts: Evaluating Persona Profiles against Customer Behavior\" (with Myungsu Kwak and Suhyeon Lee) received the **Outstanding Paper Award** (우수논문상) at the 2026 KMIS International Conference."
+    },
     {
       "date": "2026-10-07",
       "content": "Our group has **two papers** accepted for presentation at [WITS 2026](https://witsconf.org/wits2026-call-for-papers/). Congratulations, Juneha, and Suhyeon!"
